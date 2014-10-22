@@ -4,12 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Data;
-
-namespace RegEstudiantes.ConexionDB
+using System.Configuration;
+namespace DAL
 {
     public class Conexion
     {
-        SqlConnection con = new SqlConnection(@"server = .\sqlexpress; database=FinalProyect; integrated security = true;");
+        //todo:forma correcta de leer el ConnectionString
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
         /// <summary>
         /// para ejecutar todos los codigos
         /// </summary>
