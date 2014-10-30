@@ -61,5 +61,15 @@ namespace BLL
         {
             return conexion.BuscarDb("select " + columnas + " from Estudiantes Where " + condicion);
         }
+
+        public static DataTable StaticListar(string condicion) { //ugly fix temporal
+            Conexion conexion = new Conexion();
+            return conexion.BuscarDb("select * from Estudiantes where " + condicion);
+        }
+
+        public static DataTable Listar(string columnas, string condicion) {
+            Conexion conexion = new Conexion();
+            return conexion.BuscarDb("select " + columnas + " from Estudiantes where " + condicion);
+        }
     }
 }
