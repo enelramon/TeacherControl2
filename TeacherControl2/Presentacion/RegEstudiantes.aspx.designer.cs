@@ -10,7 +10,7 @@
 namespace RegEstudiantes.Presentacion {
     
     
-    public partial class Estudiantes {
+    public partial class RegEstudiantes {
         
         /// <summary>
         /// form1 control.
