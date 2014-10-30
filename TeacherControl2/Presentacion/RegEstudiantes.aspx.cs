@@ -8,7 +8,7 @@ using RegEstudiantes.Enlace_de_datos;
 
 namespace RegEstudiantes.Presentacion
 {
-    public partial class Estudiantes : System.Web.UI.Page
+    public partial class RegEstudiantes : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
