@@ -73,6 +73,7 @@
     <Content Include="Presentacion\ConsultaEstudiantes.aspx" />
     <Content Include="Presentacion\IniciarAsistencia.aspx" />
     <Content Include="Presentacion\PasarAsistencia.aspx" />
+    <Content Include="Presentacion\RegCalificacionEnvios.aspx" />
     <Content Include="Presentacion\RegEstudiantes.aspx" />
     <Content Include="Presentacion\RegistroProfesores.aspx" />
     <Content Include="Presentacion\WebForm1.aspx" />
@@ -160,6 +161,7 @@
     </Compile>
     <Compile Include="Presentacion\ConsultaEstudiantes.aspx.cs">
       <DependentUpon>ConsultaEstudiantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentacion\ConsultaEstudiantes.aspx.designer.cs">
       <DependentUpon>ConsultaEstudiantes.aspx</DependentUpon>
@@ -177,6 +179,13 @@
     </Compile>
     <Compile Include="Presentacion\PasarAsistencia.aspx.designer.cs">
       <DependentUpon>PasarAsistencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\RegCalificacionEnvios.aspx.cs">
+      <DependentUpon>RegCalificacionEnvios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\RegCalificacionEnvios.aspx.designer.cs">
+      <DependentUpon>RegCalificacionEnvios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\RegEstudiantes.aspx.cs">
       <DependentUpon>RegEstudiantes.aspx</DependentUpon>
