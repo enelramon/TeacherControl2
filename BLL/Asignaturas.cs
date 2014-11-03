@@ -9,6 +9,7 @@ namespace BLL
 {
     public class Asignaturas
     {
+
         public int IdAsignatura { get; set; }
         public string Codigo { get; set; }
         public string Nombre { get; set; }
