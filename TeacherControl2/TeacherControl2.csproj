@@ -70,10 +70,14 @@
       <DependentUpon>TeacherControlDb.mdf</DependentUpon>
     </Content>
     <Content Include="ConexionDB\TeacherControlDB   10-07-2014.sql" />
+    <Content Include="Presentacion\ConsultaEstudiantes.aspx" />
+    <Content Include="Presentacion\IniciarAsistencia.aspx" />
+    <Content Include="Presentacion\PasarAsistencia.aspx" />
     <Content Include="Presentacion\RegEstudiantes.aspx" />
     <Content Include="Presentacion\RegistroProfesores.aspx" />
     <Content Include="Presentacion\WebForm1.aspx" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Presentacion\WebForm2.aspx" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Web.config">
@@ -88,7 +92,6 @@
     <Compile Include="BasePage.Master.designer.cs">
       <DependentUpon>BasePage.Master</DependentUpon>
     </Compile>
-    <Compile Include="ConexionDB\Conexion.cs" />
     <Compile Include="Enlace de datos\Asignatura.cs">
       <DependentUpon>TeacherControlModel.tt</DependentUpon>
     </Compile>
@@ -110,7 +113,6 @@
     <Compile Include="Enlace de datos\Estudiante.cs">
       <DependentUpon>TeacherControlModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Enlace de datos\Estudiantes.cs" />
     <Compile Include="Enlace de datos\Evaluacione.cs">
       <DependentUpon>TeacherControlModel.tt</DependentUpon>
     </Compile>
@@ -156,6 +158,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TeacherControlModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\ConsultaEstudiantes.aspx.cs">
+      <DependentUpon>ConsultaEstudiantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ConsultaEstudiantes.aspx.designer.cs">
+      <DependentUpon>ConsultaEstudiantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\IniciarAsistencia.aspx.cs">
+      <DependentUpon>IniciarAsistencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\IniciarAsistencia.aspx.designer.cs">
+      <DependentUpon>IniciarAsistencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\PasarAsistencia.aspx.cs">
+      <DependentUpon>PasarAsistencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\PasarAsistencia.aspx.designer.cs">
+      <DependentUpon>PasarAsistencia.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\RegEstudiantes.aspx.cs">
       <DependentUpon>RegEstudiantes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -176,6 +198,13 @@
     </Compile>
     <Compile Include="Presentacion\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -218,6 +247,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{55f5ad57-c096-4219-91f1-4a2fabf52b01}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

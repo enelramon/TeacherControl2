@@ -10,4 +10,5 @@
             <asp:HyperLinkField DataNavigateUrlFields="IdEstudiante" DataNavigateUrlFormatString="~/Registros/rEstudiantes.aspx?EstudianteId={0}" Text="Editar" />
         </Columns>
     </asp:GridView>
+
 </asp:Content>
