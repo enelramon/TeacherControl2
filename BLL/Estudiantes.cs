@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
-using System.Data;
 using DAL;
 
 namespace BLL
@@ -19,7 +19,7 @@ namespace BLL
         public string Telefono { set; get; }
         public string Celular { set; get; }
         
-        Conexion conexion = new Conexion();
+        ConexionDb conexion = new ConexionDb();
         
         public bool Insertar()
         {
@@ -33,10 +33,10 @@ namespace BLL
 
         public bool Modificar()
         {
-            return conexion.EjecutarDB("update estudiantes set Matricula ='" + Matricula + "',Nombres = '" + Nombre + "',Direccion='" + Direccion + "',Genero=" + Genero + ",FechaNacimiento='" + FechaNac.ToString("MM/dd/yyyy HH:mm:ss") + "',Email='" + Email + "',Telefono1='" + Telefono + "',Telefono2='" + Celular + "' where IdEstudiante = " + IdEstudiante);
+            return conexion.EjecutarDB("update Estudiantes set Matricula ='" + Matricula + "',Nombres = '" + Nombre + "',Direccion='" + Direccion + "',Genero=" + Genero + ",FechaNacimiento='" + FechaNac.ToString("MM/dd/yyyy HH:mm:ss") + "',Email='" + Email + "',Telefono1='" + Telefono + "',Telefono2='" + Celular + "' where IdEstudiante = " + IdEstudiante);
         }
         
-        public bool Buscar()
+        public bool Buscar() // no falta int id?
         {
             bool mensaje = false;
             DataTable dt;
@@ -63,12 +63,12 @@ namespace BLL
         }
 
         public static DataTable StaticListar(string condicion) { //ugly fix temporal
-            Conexion conexion = new Conexion();
+            ConexionDb conexion = new ConexionDb();
             return conexion.BuscarDb("select * from Estudiantes where " + condicion);
         }
 
-        public static DataTable Listar(string columnas, string condicion) {
-            Conexion conexion = new Conexion();
+        public static DataTable StaticListar(string columnas, string condicion) {
+            ConexionDb conexion = new ConexionDb();
             return conexion.BuscarDb("select " + columnas + " from Estudiantes where " + condicion);
         }
     }
