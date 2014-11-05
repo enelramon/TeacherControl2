@@ -23,7 +23,7 @@ namespace BLL {
         ConexionDb conexion = new ConexionDb();
 
         public bool Insertar() {
-            return conexion.EjecutarDB("insert into EnviosTareas(IdEstudiante, IdTarea, Fecha, Descripcion, ResultadoEsperado, Adjuntar, Porcentaje) values(" + IdEstudiante + "," + IdTarea + "," + Fecha.ToDbString() + "," + Descripcion.ToDbString() + "," + ResultadoEsperado.ToDbString() + "," + Adjuntar.ToDbString() + "," + Porcentaje + ");");
+            return conexion.EjecutarDB("insert into EnviosTareas(IdEstudiante, IdTarea, Fecha, Descripcion, ResultadoEsperado, Adjuntar, PorcentajeCalificacion) values(" + IdEstudiante + "," + IdTarea + "," + Fecha.ToDbString() + "," + Descripcion.ToDbString() + "," + ResultadoEsperado.ToDbString() + "," + Adjuntar.ToDbString() + "," + Porcentaje + ");");
         }
 
         public bool Eliminar() {
@@ -31,7 +31,7 @@ namespace BLL {
         }
 
         public bool Modificar() {
-            return conexion.EjecutarDB("update EnviosTareas set IdEstudiante = " + IdEstudiante + ", IdTarea = " + IdTarea + ", Fecha = " + Fecha.ToDbString() + ", Descripcion = " + Descripcion.ToDbString() + ", ResultadoEsperado = " + ResultadoEsperado.ToDbString() + ", Adjuntar = " + Adjuntar.ToDbString() + ", Porcentaje = " + Porcentaje + ", FechaCalificacion = " + FechaCalificacion.ToDbString() + ", Calificacion = " + Calificacion + " where IdEnvioTarea = " + IdEnvioTarea + ";");
+            return conexion.EjecutarDB("update EnviosTareas set IdEstudiante = " + IdEstudiante + ", IdTarea = " + IdTarea + ", Fecha = " + Fecha.ToDbString() + ", Descripcion = " + Descripcion.ToDbString() + ", ResultadoEsperado = " + ResultadoEsperado.ToDbString() + ", Adjuntar = " + Adjuntar.ToDbString() + ", PorcentajeCalificacion = " + Porcentaje + ", FechaCalificacion = " + FechaCalificacion.ToDbString() + ", Calificacion = " + Calificacion + " where IdEnvioTarea = " + IdEnvioTarea + ";");
         }
 
         public bool Buscar(int id) {
@@ -46,7 +46,7 @@ namespace BLL {
                 this.Descripcion = (string)dt.Rows[0]["Descripcion"];
                 this.ResultadoEsperado = (string)dt.Rows[0]["ResultadoEsperado"];
                 this.Adjuntar = (string)dt.Rows[0]["Adjuntar"];
-                this.Porcentaje = (float)dt.Rows[0]["Porcentaje"];
+                this.Porcentaje = (float)dt.Rows[0]["PorcentajeCalificacion"];
                 this.FechaCalificacion = (DateTime)dt.Rows[0]["FechaCalificacion"];
                 this.Calificacion = (float)dt.Rows[0]["Calificacion"];
             }

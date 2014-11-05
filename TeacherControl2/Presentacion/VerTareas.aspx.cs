@@ -54,10 +54,11 @@ namespace RegEstudiantes.Presentacion {
         }
 
         protected void EnviarButton_Click(object sender, EventArgs e) {
-            DataTable dt = Estudiantes.StaticListar("IdEstudiante", "Matricula = " + Session["Usuario"]); // TODO: Revisar si se usara esta forma
+            DataTable dt = Estudiantes.StaticListar("IdEstudiante", "Matricula = " + ((string)Session["Usuario"]).ToDbString()); // TODO: Revisar si se usara esta forma
             int idEstudiante = -1;
             if (dt.Rows.Count > 0) {
                 idEstudiante = (int)dt.Rows[0]["IdEstudiante"];
+                int.TryParse(Request.QueryString["IdTarea"], out idTarea);
                 if (idEstudiante > 0) {
                     envioTarea.IdEstudiante = idEstudiante;
                     envioTarea.IdTarea = idTarea;
