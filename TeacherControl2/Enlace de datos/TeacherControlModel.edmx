@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TeacherControlDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Asignaturas">
+          <Key>
+            <PropertyRef Name="IdAsignatura" />
+          </Key>
+          <Property Name="IdAsignatura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Ceditos" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Asistencias">
+          <Key>
+            <PropertyRef Name="IdAsistencia" />
+          </Key>
+          <Property Name="IdAsistencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="IdSemestre" Type="int" Nullable="false" />
+          <Property Name="IdAsignatura" Type="int" Nullable="false" />
+          <Property Name="IdSeccion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AsistenciasDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdAsistencia" Type="int" Nullable="false" />
+          <Property Name="IdEstudiante" Type="int" Nullable="false" />
+          <Property Name="Calificacion" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Calificaciones">
+          <Key>
+            <PropertyRef Name="IdCalificacion" />
+          </Key>
+          <Property Name="IdCalificacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="IdSemestre" Type="int" Nullable="false" />
+          <Property Name="IdAsignatura" Type="int" Nullable="false" />
+          <Property Name="IdSeccion" Type="int" Nullable="false" />
+          <Property Name="IdEvaluacion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CalificacionesDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdEstudiante" Type="int" Nullable="false" />
+          <Property Name="IdCalificacion" Type="int" Nullable="false" />
+          <Property Name="Calificacion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Deudas">
+          <Key>
+            <PropertyRef Name="IdDeuda" />
+          </Key>
+          <Property Name="IdDeuda" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Vence" Type="datetime" Nullable="false" />
+          <Property Name="IdSemestre" Type="int" Nullable="false" />
+          <Property Name="IdEstudiante" Type="int" Nullable="false" />
+          <Property Name="IdAsignatura" Type="int" Nullable="false" />
+          <Property Name="Cantidad" Type="int" Nullable="false" />
+          <Property Name="Balance" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Estudiantes">
+          <Key>
+            <PropertyRef Name="IdEstudiante" />
+          </Key>
+          <Property Name="IdEstudiante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Matricula" Type="varchar" MaxLength="9" />
+          <Property Name="Nombres" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Apellidos" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="100" />
+          <Property Name="Genero" Type="tinyint" />
+          <Property Name="FechaNacimiento" Type="date" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Telefono1" Type="varchar" MaxLength="12" />
+          <Property Name="Telefono2" Type="varchar" MaxLength="12" />
+        </EntityType>
+        <EntityType Name="Evaluaciones">
+          <Key>
+            <PropertyRef Name="IdEvaluacion" />
+          </Key>
+          <Property Name="IdEvaluacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdSemestre" Type="int" Nullable="false" />
+          <Property Name="IdAsignatura" Type="int" Nullable="false" />
+          <Property Name="IdProfesor" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EvaluacionesDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdEvaluacion" Type="int" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Puntuacion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Inscripciones">
+          <Key>
+            <PropertyRef Name="IdInscripcion" />
+          </Key>
+          <Property Name="IdInscripcion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="IdProfesor" Type="int" Nullable="false" />
+          <Property Name="IdSemestre" Type="int" Nullable="false" />
+          <Property Name="IdAsignatura" Type="int" Nullable="false" />
+          <Property Name="IdSeccion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InscripcionesDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdInscripcion" Type="int" Nullable="false" />
+          <Property Name="IdEstudiante" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagosDeudas">
+          <Key>
+            <PropertyRef Name="IdPago" />
+          </Key>
+          <Property Name="IdPago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="IdEstudiante" Type="int" Nullable="false" />
+          <Property Name="IdAsignatura" Type="int" Nullable="false" />
+          <Property Name="IdDeuda" Type="int" Nullable="false" />
+          <Property Name="CantidadPagada" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Profesores">
+          <Key>
+            <PropertyRef Name="IdProfesor" />
+          </Key>
+          <Property Name="IdProfesor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombres" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Apellidos" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="100" />
+          <Property Name="Genero" Type="tinyint" />
+          <Property Name="FechaNacimiento" Type="date" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Telefono1" Type="varchar" MaxLength="12" />
+          <Property Name="Telefono2" Type="varchar" MaxLength="12" />
+        </EntityType>
+        <EntityType Name="Secciones">
+          <Key>
+            <PropertyRef Name="IdSeccion" />
+          </Key>
+          <Property Name="IdSeccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Numero" Type="int" Nullable="false" />
+          <Property Name="IdAsignatura" Type="int" Nullable="false" />
+          <Property Name="IdProfesor" Type="int" Nullable="false" />
+          <Property Name="Aula" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="HoraInicio" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="HoraFin" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Activa" Type="bit" />
+        </EntityType>
+        <EntityType Name="Semestres">
+          <Key>
+            <PropertyRef Name="IdSemestre" />
+          </Key>
+          <Property Name="IdSemestre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="6" />
+          <Property Name="FechaInicio" Type="date" />
+          <Property Name="FechaFin" Type="date" />
+          <Property Name="FechaParcial1" Type="date" />
+          <Property Name="FechaParcial2" Type="date" />
+          <Property Name="FechaFinal" Type="date" />
+          <Property Name="Activo" Type="bit" />
+        </EntityType>
+        <EntityType Name="Tareas">
+          <Key>
+            <PropertyRef Name="IdTarea" />
+          </Key>
+          <Property Name="IdTarea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodigoTarea" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Vence" Type="datetime" Nullable="false" />
+          <Property Name="IdSemestre" Type="int" Nullable="false" />
+          <Property Name="IdAsignatura" Type="int" Nullable="false" />
+          <Property Name="IdSeccion" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TareasDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdTarea" Type="int" Nullable="false" />
+          <Property Name="IdEstudiante" Type="int" Nullable="false" />
+          <Property Name="Calificacion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TeacherControlDbModelStoreContainer">
+          <EntitySet Name="Asignaturas" EntityType="Self.Asignaturas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Asistencias" EntityType="Self.Asistencias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AsistenciasDetalle" EntityType="Self.AsistenciasDetalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Calificaciones" EntityType="Self.Calificaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CalificacionesDetalle" EntityType="Self.CalificacionesDetalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Deudas" EntityType="Self.Deudas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estudiantes" EntityType="Self.Estudiantes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Evaluaciones" EntityType="Self.Evaluaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EvaluacionesDetalle" EntityType="Self.EvaluacionesDetalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inscripciones" EntityType="Self.Inscripciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InscripcionesDetalle" EntityType="Self.InscripcionesDetalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PagosDeudas" EntityType="Self.PagosDeudas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Profesores" EntityType="Self.Profesores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Secciones" EntityType="Self.Secciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Semestres" EntityType="Self.Semestres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tareas" EntityType="Self.Tareas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TareasDetalle" EntityType="Self.TareasDetalle" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TeacherControlDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Asignatura">
+          <Key>
+            <PropertyRef Name="IdAsignatura" />
+          </Key>
+          <Property Name="IdAsignatura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ceditos" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Asistencia">
+          <Key>
+            <PropertyRef Name="IdAsistencia" />
+          </Key>
+          <Property Name="IdAsistencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IdSemestre" Type="Int32" Nullable="false" />
+          <Property Name="IdAsignatura" Type="Int32" Nullable="false" />
+          <Property Name="IdSeccion" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AsistenciasDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdAsistencia" Type="Int32" Nullable="false" />
+          <Property Name="IdEstudiante" Type="Int32" Nullable="false" />
+          <Property Name="Calificacion" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Calificacion">
+          <Key>
+            <PropertyRef Name="IdCalificacion" />
+          </Key>
+          <Property Name="IdCalificacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IdSemestre" Type="Int32" Nullable="false" />
+          <Property Name="IdAsignatura" Type="Int32" Nullable="false" />
+          <Property Name="IdSeccion" Type="Int32" Nullable="false" />
+          <Property Name="IdEvaluacion" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CalificacionesDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEstudiante" Type="Int32" Nullable="false" />
+          <Property Name="IdCalificacion" Type="Int32" Nullable="false" />
+          <Property Name="Calificacion" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Deuda">
+          <Key>
+            <PropertyRef Name="IdDeuda" />
+          </Key>
+          <Property Name="IdDeuda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Vence" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IdSemestre" Type="Int32" Nullable="false" />
+          <Property Name="IdEstudiante" Type="Int32" Nullable="false" />
+          <Property Name="IdAsignatura" Type="Int32" Nullable="false" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <Property Name="Balance" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Estudiante">
+          <Key>
+            <PropertyRef Name="IdEstudiante" />
+          </Key>
+          <Property Name="IdEstudiante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Matricula" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="Nombres" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellidos" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Genero" Type="Byte" />
+          <Property Name="FechaNacimiento" Type="DateTime" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono1" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono2" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Evaluacione">
+          <Key>
+            <PropertyRef Name="IdEvaluacion" />
+          </Key>
+          <Property Name="IdEvaluacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdSemestre" Type="Int32" Nullable="false" />
+          <Property Name="IdAsignatura" Type="Int32" Nullable="false" />
+          <Property Name="IdProfesor" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EvaluacionesDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEvaluacion" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Puntuacion" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Inscripcione">
+          <Key>
+            <PropertyRef Name="IdInscripcion" />
+          </Key>
+          <Property Name="IdInscripcion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IdProfesor" Type="Int32" Nullable="false" />
+          <Property Name="IdSemestre" Type="Int32" Nullable="false" />
+          <Property Name="IdAsignatura" Type="Int32" Nullable="false" />
+          <Property Name="IdSeccion" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InscripcionesDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdInscripcion" Type="Int32" Nullable="false" />
+          <Property Name="IdEstudiante" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagosDeuda">
+          <Key>
+            <PropertyRef Name="IdPago" />
+          </Key>
+          <Property Name="IdPago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IdEstudiante" Type="Int32" Nullable="false" />
+          <Property Name="IdAsignatura" Type="Int32" Nullable="false" />
+          <Property Name="IdDeuda" Type="Int32" Nullable="false" />
+          <Property Name="CantidadPagada" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Profesore">
+          <Key>
+            <PropertyRef Name="IdProfesor" />
+          </Key>
+          <Property Name="IdProfesor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombres" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellidos" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Genero" Type="Byte" />
+          <Property Name="FechaNacimiento" Type="DateTime" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono1" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono2" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Seccione">
+          <Key>
+            <PropertyRef Name="IdSeccion" />
+          </Key>
+          <Property Name="IdSeccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Numero" Type="Int32" Nullable="false" />
+          <Property Name="IdAsignatura" Type="Int32" Nullable="false" />
+          <Property Name="IdProfesor" Type="Int32" Nullable="false" />
+          <Property Name="Aula" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HoraInicio" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HoraFin" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Activa" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Semestre">
+          <Key>
+            <PropertyRef Name="IdSemestre" />
+          </Key>
+          <Property Name="IdSemestre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="FechaInicio" Type="DateTime" Precision="0" />
+          <Property Name="FechaFin" Type="DateTime" Precision="0" />
+          <Property Name="FechaParcial1" Type="DateTime" Precision="0" />
+          <Property Name="FechaParcial2" Type="DateTime" Precision="0" />
+          <Property Name="FechaFinal" Type="DateTime" Precision="0" />
+          <Property Name="Activo" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Tarea">
+          <Key>
+            <PropertyRef Name="IdTarea" />
+          </Key>
+          <Property Name="IdTarea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoTarea" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Vence" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IdSemestre" Type="Int32" Nullable="false" />
+          <Property Name="IdAsignatura" Type="Int32" Nullable="false" />
+          <Property Name="IdSeccion" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TareasDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdTarea" Type="Int32" Nullable="false" />
+          <Property Name="IdEstudiante" Type="Int32" Nullable="false" />
+          <Property Name="Calificacion" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TeacherControlDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Asignaturas" EntityType="Self.Asignatura" />
+          <EntitySet Name="Asistencias" EntityType="Self.Asistencia" />
+          <EntitySet Name="AsistenciasDetalles" EntityType="Self.AsistenciasDetalle" />
+          <EntitySet Name="Calificacions" EntityType="TeacherControlDbModel.Calificacion" />
+          <EntitySet Name="CalificacionesDetalles" EntityType="Self.CalificacionesDetalle" />
+          <EntitySet Name="Deudas" EntityType="Self.Deuda" />
+          <EntitySet Name="Estudiantes" EntityType="Self.Estudiante" />
+          <EntitySet Name="Evaluaciones" EntityType="Self.Evaluacione" />
+          <EntitySet Name="EvaluacionesDetalles" EntityType="Self.EvaluacionesDetalle" />
+          <EntitySet Name="Inscripciones" EntityType="Self.Inscripcione" />
+          <EntitySet Name="InscripcionesDetalles" EntityType="Self.InscripcionesDetalle" />
+          <EntitySet Name="PagosDeudas" EntityType="Self.PagosDeuda" />
+          <EntitySet Name="Profesores" EntityType="Self.Profesore" />
+          <EntitySet Name="Secciones" EntityType="Self.Seccione" />
+          <EntitySet Name="Semestres" EntityType="Self.Semestre" />
+          <EntitySet Name="Tareas" EntityType="Self.Tarea" />
+          <EntitySet Name="TareasDetalles" EntityType="Self.TareasDetalle" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TeacherControlDbModelStoreContainer" CdmEntityContainer="TeacherControlDbEntities">
+          <EntitySetMapping Name="Asignaturas">
+            <EntityTypeMapping TypeName="TeacherControlDbModel.Asignatura">
+              <MappingFragment StoreEntitySet="Asignaturas">
+                <ScalarProperty Name="IdAsignatura" ColumnName="IdAsignatura" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Ceditos" ColumnName="Ceditos" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Asistencias">
+            <EntityTypeMapping TypeName="TeacherControlDbModel.Asistencia">
+              <MappingFragment StoreEntitySet="Asistencias">
+                <ScalarProperty Name="IdAsistencia" ColumnName="IdAsistencia" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdSemestre" ColumnName="IdSemestre" />
+                <ScalarProperty Name="IdAsignatura" ColumnName="IdAsignatura" />
+                <ScalarProperty Name="IdSeccion" ColumnName="IdSeccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AsistenciasDetalles">
+            <EntityTypeMapping TypeName="TeacherControlDbModel.AsistenciasDetalle">
+              <MappingFragment StoreEntitySet="AsistenciasDetalle">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdAsistencia" ColumnName="IdAsistencia" />
+                <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+                <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Calificacions">
+            <EntityTypeMapping TypeName="TeacherControlDbModel.Calificacion">
+              <MappingFragment StoreEntitySet="Calificaciones">
+                <ScalarProperty Name="IdCalificacion" ColumnName="IdCalificacion" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdSemestre" ColumnName="IdSemestre" />
+                <ScalarProperty Name="IdAsignatura" ColumnName="IdAsignatura" />
+                <ScalarProperty Name="IdSeccion" ColumnName="IdSeccion" />
+                <ScalarProperty Name="IdEvaluacion" ColumnName="IdEvaluacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CalificacionesDetalles">
+            <EntityTypeMapping TypeName="TeacherControlDbModel.CalificacionesDetalle">
+              <MappingFragment StoreEntitySet="CalificacionesDetalle">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+                <ScalarProperty Name="IdCalificacion" ColumnName="IdCalificacion" />
+                <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deudas">
+            <EntityTypeMapping TypeName="TeacherControlDbModel.Deuda">
+              <MappingFragment StoreEntitySet="Deudas">
+                <ScalarProperty Name="IdDeuda" ColumnName="IdDeuda" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Vence" ColumnName="Vence" />
+                <ScalarProperty Name="IdSemestre" ColumnName="IdSemestre" />
+                <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+                <ScalarProperty Name="IdAsignatura" ColumnName="IdAsignatura" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estudiantes">
+            <EntityTypeMapping TypeName="TeacherControlDbModel.Estudiante">
+              <MappingFragment StoreEntitySet="Estudiantes">
+                <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+                <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Genero" ColumnName="Genero" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefono1" ColumnName="Telefono1" />
+                <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Evaluaciones">
+            <EntityTypeMapping TypeName="TeacherControlDbModel.Evaluacione">
+              <MappingFragment StoreEntitySet="Evaluaciones">
+                <ScalarProperty Name="IdEvaluacion" ColumnName="IdEvaluacion" />
+                <ScalarProperty Name="IdSemestre" ColumnName="IdSemestre" />
+                <ScalarProperty Name="IdAsignatura" ColumnName="IdAsignatura" />
+                <ScalarProperty Name="IdProfesor" ColumnName="IdProfesor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EvaluacionesDetalles">
+            <EntityTypeMapping TypeName="TeacherControlDbModel.EvaluacionesDetalle">
+              <MappingFragment StoreEntitySet="EvaluacionesDetalle">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdEvaluacion" ColumnName="IdEvaluacion" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Puntuacion" ColumnName="Puntuacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inscripciones">
+            <EntityTypeMapping TypeName="TeacherControlDbModel.Inscripcione">
+              <MappingFragment StoreEntitySet="Inscripciones">
+                <ScalarProperty Name="IdInscripcion" ColumnName="IdInscripcion" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdProfesor" ColumnName="IdProfesor" />
+                <ScalarProperty Name="IdSemestre" ColumnName="IdSemestre" />
+                <ScalarProperty Name="IdAsignatura" ColumnName="IdAsignatura" />
+                <ScalarProperty Name="IdSeccion" ColumnName="IdSeccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InscripcionesDetalles">
+            <EntityTypeMapping TypeName="TeacherControlDbModel.InscripcionesDetalle">
+              <MappingFragment StoreEntitySet="InscripcionesDetalle">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdInscripcion" ColumnName="IdInscripcion" />
+                <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PagosDeudas">
+            <EntityTypeMapping TypeName="TeacherControlDbModel.PagosDeuda">
+              <MappingFragment StoreEntitySet="PagosDeudas">
+                <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+                <ScalarProperty Name="IdAsignatura" ColumnName="IdAsignatura" />
+                <ScalarProperty Name="IdDeuda" ColumnName="IdDeuda" />
+                <ScalarProperty Name="CantidadPagada" ColumnName="CantidadPagada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profesores">
+            <EntityTypeMapping TypeName="TeacherControlDbModel.Profesore">
+              <MappingFragment StoreEntitySet="Profesores">
+                <ScalarProperty Name="IdProfesor" ColumnName="IdProfesor" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Genero" ColumnName="Genero" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefono1" ColumnName="Telefono1" />
+                <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Secciones">
+            <EntityTypeMapping TypeName="TeacherControlDbModel.Seccione">
+              <MappingFragment StoreEntitySet="Secciones">
+                <ScalarProperty Name="IdSeccion" ColumnName="IdSeccion" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="IdAsignatura" ColumnName="IdAsignatura" />
+                <ScalarProperty Name="IdProfesor" ColumnName="IdProfesor" />
+                <ScalarProperty Name="Aula" ColumnName="Aula" />
+                <ScalarProperty Name="HoraInicio" ColumnName="HoraInicio" />
+                <ScalarProperty Name="HoraFin" ColumnName="HoraFin" />
+                <ScalarProperty Name="Activa" ColumnName="Activa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Semestres">
+            <EntityTypeMapping TypeName="TeacherControlDbModel.Semestre">
+              <MappingFragment StoreEntitySet="Semestres">
+                <ScalarProperty Name="IdSemestre" ColumnName="IdSemestre" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="FechaParcial1" ColumnName="FechaParcial1" />
+                <ScalarProperty Name="FechaParcial2" ColumnName="FechaParcial2" />
+                <ScalarProperty Name="FechaFinal" ColumnName="FechaFinal" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tareas">
+            <EntityTypeMapping TypeName="TeacherControlDbModel.Tarea">
+              <MappingFragment StoreEntitySet="Tareas">
+                <ScalarProperty Name="IdTarea" ColumnName="IdTarea" />
+                <ScalarProperty Name="CodigoTarea" ColumnName="CodigoTarea" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Vence" ColumnName="Vence" />
+                <ScalarProperty Name="IdSemestre" ColumnName="IdSemestre" />
+                <ScalarProperty Name="IdAsignatura" ColumnName="IdAsignatura" />
+                <ScalarProperty Name="IdSeccion" ColumnName="IdSeccion" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TareasDetalles">
+            <EntityTypeMapping TypeName="TeacherControlDbModel.TareasDetalle">
+              <MappingFragment StoreEntitySet="TareasDetalle">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdTarea" ColumnName="IdTarea" />
+                <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+                <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BasePage.master.cs" Inherits="RegEstudiantes.BasePage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div><h1> HEADER DE LA WEB PAGE</h1></div>
+
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+           
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+
+     <div><h2>FOOTER DE LA WEBPAGE</h2></div>
+
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+
+</body>
+</html>
