@@ -75,7 +75,6 @@
     <Content Include="Presentacion\PasarAsistencia.aspx" />
     <Content Include="Presentacion\RegEstudiantes.aspx" />
     <Content Include="Presentacion\RegistroProfesores.aspx" />
-    <Content Include="Presentacion\RegistroTareas.aspx" />
     <Content Include="Presentacion\VerTareas.aspx" />
     <Content Include="Presentacion\WebForm1.aspx" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
@@ -194,13 +193,6 @@
     </Compile>
     <Compile Include="Presentacion\RegistroProfesores.aspx.designer.cs">
       <DependentUpon>RegistroProfesores.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\RegistroTareas.aspx.cs">
-      <DependentUpon>RegistroTareas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\RegistroTareas.aspx.designer.cs">
-      <DependentUpon>RegistroTareas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\VerTareas.aspx.cs">
       <DependentUpon>VerTareas.aspx</DependentUpon>
