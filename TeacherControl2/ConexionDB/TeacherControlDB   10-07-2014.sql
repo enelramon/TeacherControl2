@@ -43,32 +43,23 @@ FechaFinal date,
 Activo bit)
 
 
-create table Secciones(
-	IdSeccion int identity(1,1) primary key NOT NULL,
-	Numero int NOT NULL,
-	IdAsignatura int NOT NULL,
-	IdProfesor int not null,
-	Aula varchar(10) NOT NULL,
-	HoraInicio varchar(5) NOT NULL,
-	HoraFin varchar(5) NOT NULL	,
-	Activa bit
-)
+ 
 
 
 
-go
---JAN LUIS
-Create table Inscripciones(IdInscripcion int identity(1,1) primary key NOT NULL,
-Fecha datetime  not null,
-IdProfesor int  not null,
-IdSemestre int not null,
-IdAsignatura int not null,
-IdSeccion int not null)
-go
+--go
+----JAN LUIS
+--Create table Inscripciones(IdInscripcion int identity(1,1) primary key NOT NULL,
+--Fecha datetime  not null,
+--IdProfesor int  not null,
+--IdSemestre int not null,
+--IdAsignatura int not null,
+--IdSeccion int not null)
+--go
 
-Create table InscripcionesDetalle(Id int identity(1,1) primary key NOT NULL,
-IdInscripcion int not null,
-IdEstudiante int not null)
+--Create table InscripcionesDetalle(Id int identity(1,1) primary key NOT NULL,
+--IdInscripcion int not null,
+--IdEstudiante int not null)
 
 go
 --BRAUNY

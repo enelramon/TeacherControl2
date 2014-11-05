@@ -5,17 +5,18 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using RegEstudiantes.Enlace_de_datos;
+using BLL;
 
 namespace RegEstudiantes.Presentacion
 {
-    public partial class Estudiantes : System.Web.UI.Page
+    public partial class RegEstudiantes : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        Enlace_de_datos.Estudiantes estudiantes = new Enlace_de_datos.Estudiantes();
+        BLL.Estudiantes estudiantes = new BLL.Estudiantes();
 
         const string AREA = "809,829,849";
         const int ANO_INICIALD = 1978;
@@ -121,6 +122,13 @@ namespace RegEstudiantes.Presentacion
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
+            BLL.Estudiantes est = new BLL.Estudiantes();
+
+           
+
+                est.Insertar();
+
+
             if (validar() == true)
             {
                 int idestudiante = 0;
@@ -128,6 +136,7 @@ namespace RegEstudiantes.Presentacion
                 estudiantes.IdEstudiante = idestudiante;
                 estudiantes.Matricula = MatriculaTextBox.Text;
                 estudiantes.Nombre = NombreTextBox.Text;
+              
                 estudiantes.Direccion = DireccionTextBox.Text;
                 estudiantes.FechaNac = Convert.ToDateTime(FechaNacTextBox.Text);
                 estudiantes.Genero = SexoDropDownList.SelectedIndex;

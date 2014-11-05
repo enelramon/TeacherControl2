@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegEstudiantes.aspx.cs" Inherits="RegEstudiantes.Presentacion.Estudiantes" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegEstudiantes.aspx.cs" Inherits="RegEstudiantes.Presentacion.RegEstudiantes" %>
 
 <!DOCTYPE html>
 
@@ -39,12 +39,11 @@
         <asp:Label ID="Label5" runat="server" Text="Sexo"></asp:Label>
                 </td>
                 <td>
-        <asp:DropDownList ID="SexoDropDownList" runat="server" DataSourceID="SqlDataSource1" DataTextField="IdAsignatura" DataValueField="IdAsignatura">
+        <asp:DropDownList ID="SexoDropDownList" runat="server" >
             <asp:ListItem Value="0">Selecione un Sexo</asp:ListItem>
             <asp:ListItem Value="1">F</asp:ListItem>
             <asp:ListItem Value="2">M</asp:ListItem>
         </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [IdAsignatura], [Codigo] FROM [Asignaturas]"></asp:SqlDataSource>
                 </td>
             </tr>
             <tr>

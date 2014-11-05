@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
-using RegEstudiantes.ConexionDB;
+using DAL;
 
-namespace RegEstudiantes.Enlace_de_datos
+namespace BLL
 {
     public class Estudiantes
     {
@@ -56,9 +56,20 @@ namespace RegEstudiantes.Enlace_de_datos
             }
             return mensaje;
         }
-        public DataTable Listar(string condicion)
+
+        public DataTable Listar(string condicion,string columnas)
         {
-            return conexion.BuscarDb("select *from Estudiantes "+condicion);
+            return conexion.BuscarDb("select " + columnas + " from Estudiantes Where " + condicion);
+        }
+
+        public static DataTable StaticListar(string condicion) { //ugly fix temporal
+            Conexion conexion = new Conexion();
+            return conexion.BuscarDb("select * from Estudiantes where " + condicion);
+        }
+
+        public static DataTable Listar(string columnas, string condicion) {
+            Conexion conexion = new Conexion();
+            return conexion.BuscarDb("select " + columnas + " from Estudiantes where " + condicion);
         }
     }
 }
