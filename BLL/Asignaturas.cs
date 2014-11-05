@@ -31,8 +31,6 @@ namespace BLL
 
         public bool Eliminar(int prmIdAsignatura)
         {
-            ConexionDb Conexion = new ConexionDb();
-
             return Conexion.EjecutarDB("Delete from Asignaturas where IdAsignatura= " + prmIdAsignatura);
         }
 

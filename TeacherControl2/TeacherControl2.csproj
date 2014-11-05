@@ -75,6 +75,8 @@
     <Content Include="Presentacion\PasarAsistencia.aspx" />
     <Content Include="Presentacion\RegEstudiantes.aspx" />
     <Content Include="Presentacion\RegistroProfesores.aspx" />
+    <Content Include="Presentacion\RegistroTareas.aspx" />
+    <Content Include="Presentacion\VerTareas.aspx" />
     <Content Include="Presentacion\WebForm1.aspx" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Presentacion\WebForm2.aspx" />
@@ -160,6 +162,7 @@
     </Compile>
     <Compile Include="Presentacion\ConsultaEstudiantes.aspx.cs">
       <DependentUpon>ConsultaEstudiantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentacion\ConsultaEstudiantes.aspx.designer.cs">
       <DependentUpon>ConsultaEstudiantes.aspx</DependentUpon>
@@ -191,6 +194,20 @@
     </Compile>
     <Compile Include="Presentacion\RegistroProfesores.aspx.designer.cs">
       <DependentUpon>RegistroProfesores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\RegistroTareas.aspx.cs">
+      <DependentUpon>RegistroTareas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\RegistroTareas.aspx.designer.cs">
+      <DependentUpon>RegistroTareas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\VerTareas.aspx.cs">
+      <DependentUpon>VerTareas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\VerTareas.aspx.designer.cs">
+      <DependentUpon>VerTareas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -253,6 +270,9 @@
       <Project>{55f5ad57-c096-4219-91f1-4a2fabf52b01}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tareas\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
