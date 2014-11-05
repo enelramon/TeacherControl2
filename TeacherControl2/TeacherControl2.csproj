@@ -20,7 +20,6 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
-    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,7 +49,6 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -77,6 +75,7 @@
     <Content Include="Presentacion\PasarAsistencia.aspx" />
     <Content Include="Presentacion\RegEstudiantes.aspx" />
     <Content Include="Presentacion\RegistroProfesores.aspx" />
+    <Content Include="Presentacion\VerTareas.aspx" />
     <Content Include="Presentacion\WebForm1.aspx" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Presentacion\WebForm2.aspx" />
@@ -195,6 +194,13 @@
     <Compile Include="Presentacion\RegistroProfesores.aspx.designer.cs">
       <DependentUpon>RegistroProfesores.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\VerTareas.aspx.cs">
+      <DependentUpon>VerTareas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\VerTareas.aspx.designer.cs">
+      <DependentUpon>VerTareas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -256,6 +262,9 @@
       <Project>{55f5ad57-c096-4219-91f1-4a2fabf52b01}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tareas\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

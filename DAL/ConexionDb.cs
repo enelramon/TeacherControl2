@@ -11,7 +11,6 @@ namespace DAL
     {
         //todo:forma correcta de leer el ConnectionString
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-
         /// <summary>
         /// para ejecutar todos los codigos
         /// </summary>
@@ -22,6 +21,7 @@ namespace DAL
             bool mensaje = false;
             SqlCommand cmd = new SqlCommand();
 
+
             try
             {
                 con.Open(); // abrimos la conexion
@@ -30,7 +30,7 @@ namespace DAL
                 cmd.Connection = con; //asignamos la conexion
                 cmd.CommandText = Codigo;     //asignamos el comando
                 cmd.ExecuteNonQuery(); // ejecutamos el comando
-
+                mensaje = true;
             }
             catch (Exception)
             {
@@ -38,7 +38,7 @@ namespace DAL
             }
             finally
             {
-                mensaje = true;
+
                 con.Close(); //cerramos la conexion
                 // MessageBox.Show("Conexion cerrada");
 
@@ -46,11 +46,6 @@ namespace DAL
             return mensaje;
         }
 
-        /// <summary>
-        /// para buscar datos en la base de datos
-        /// </summary>
-        /// <param name="comando"></param>
-        /// <returns></returns>
         public DataTable BuscarDb(string comando)
         {
             SqlDataAdapter adp;
@@ -75,17 +70,37 @@ namespace DAL
             return dt;
         }
 
-
-        public Object ObtenerValorDb(string select)
+        public Object ObtenerValorDb(string escalar)
         {
             con.Open();
-            SqlCommand com = new SqlCommand(select, con);
-            Object o = com.ExecuteScalar();
+            SqlCommand com = new SqlCommand(escalar, con);
+            Object objeto = com.ExecuteScalar();
             con.Close();
-            return o;
+            return objeto;
         }
 
-        
+        public SqlDataReader DataReader(string comando)
+        {
+            SqlCommand cmd = new SqlCommand();
+            try
+            {
+                con.Open();
+            }
+            catch (Exception)
+            {
+                con = null;
+                throw;
+            }
+            cmd = new SqlCommand(comando, con);
+            return cmd.ExecuteReader();
+        }
 
+        public void Desconectar()
+        {
+            if (con.State == ConnectionState.Open || con.State == ConnectionState.Executing)
+            {
+                con.Close();
+            }
+        }
     }
 }

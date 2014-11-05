@@ -1,0 +1,10 @@
+A: http://coj.uci.cu/24h/problem.xhtml?pid=2979
+B: http://coj.uci.cu/24h/problem.xhtml?pid=2963
+C: http://coj.uci.cu/24h/problem.xhtml?pid=2950
+D: http://coj.uci.cu/24h/problem.xhtml?pid=2949
+E: http://coj.uci.cu/24h/problem.xhtml?pid=2937
+F: http://coj.uci.cu/24h/problem.xhtml?pid=2935
+G: http://coj.uci.cu/24h/problem.xhtml?pid=2874
+H: http://coj.uci.cu/24h/problem.xhtml?pid=2951
+I: http://coj.uci.cu/24h/problem.xhtml?pid=2957
+J: http://coj.uci.cu/24h/problem.xhtml?pid=2954

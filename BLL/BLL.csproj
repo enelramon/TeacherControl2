@@ -43,8 +43,12 @@
     <Compile Include="Asignaturas.cs" />
     <Compile Include="Asistencias.cs" />
     <Compile Include="AsistenciasDetalle.cs" />
+    <Compile Include="EnviosTareas.cs" />
     <Compile Include="Estudiantes.cs" />
+    <Compile Include="Extensor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Semestres.cs" />
+    <Compile Include="Tareas.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
