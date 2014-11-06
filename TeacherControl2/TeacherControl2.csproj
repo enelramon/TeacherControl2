@@ -70,6 +70,8 @@
       <DependentUpon>TeacherControlDb.mdf</DependentUpon>
     </Content>
     <Content Include="ConexionDB\TeacherControlDB   10-07-2014.sql" />
+    <Content Include="ConsultarUsuario.aspx" />
+    <Content Include="LoginUsuario.aspx" />
     <Content Include="Presentacion\ConsultaEstudiantes.aspx" />
     <Content Include="Presentacion\IniciarAsistencia.aspx" />
     <Content Include="Presentacion\PasarAsistencia.aspx" />
@@ -78,6 +80,7 @@
     <Content Include="Presentacion\WebForm1.aspx" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Presentacion\WebForm2.aspx" />
+    <Content Include="RegistroUsuario.aspx" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Web.config">
@@ -91,6 +94,12 @@
     </Compile>
     <Compile Include="BasePage.Master.designer.cs">
       <DependentUpon>BasePage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarUsuario.aspx.cs">
+      <DependentUpon>ConsultarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarUsuario.aspx.designer.cs">
+      <DependentUpon>ConsultarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Enlace de datos\Asignatura.cs">
       <DependentUpon>TeacherControlModel.tt</DependentUpon>
@@ -158,6 +167,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TeacherControlModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="LoginUsuario.aspx.cs">
+      <DependentUpon>LoginUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginUsuario.aspx.designer.cs">
+      <DependentUpon>LoginUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\ConsultaEstudiantes.aspx.cs">
       <DependentUpon>ConsultaEstudiantes.aspx</DependentUpon>
     </Compile>
@@ -211,6 +226,12 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroUsuario.aspx.cs">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroUsuario.aspx.designer.cs">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
