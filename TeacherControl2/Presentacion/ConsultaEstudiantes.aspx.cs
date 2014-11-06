@@ -16,12 +16,12 @@ namespace RegEstudiantes.Presentacion {
         }
 
         protected void BuscarButton_Click(object sender, EventArgs e) {
-            DatosGridView.DataSource = Estudiantes.StaticListar("2=2");
+            DatosGridView.DataSource = Estudiantes.Listar("2=2","*");
             DatosGridView.DataBind();
         }
 
         protected void AleatorioButton_Click(object sender, EventArgs e) {
-            DataTable dt = Estudiantes.StaticListar("IdEstudiante", "1=1");
+            DataTable dt = Estudiantes.Listar("IdEstudiante", "1=1");
             int rEstudiante = random.Next(dt.Rows.Count) + 1;
             Response.Redirect("~/Presentacion/RegEstudiantes.aspx?IdEstudiante=" + rEstudiante);
         }

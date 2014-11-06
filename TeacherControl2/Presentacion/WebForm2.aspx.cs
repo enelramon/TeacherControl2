@@ -13,10 +13,9 @@ namespace RegEstudiantes.Presentacion
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-            {
-                BLL.Estudiantes est = new BLL.Estudiantes();
+            { 
 
-                EstudiantesDropDownList.DataSource = est.Listar("1=1", "IdEstudiante,Nombres");
+                EstudiantesDropDownList.DataSource = Estudiantes.Listar("1=1", "IdEstudiante,Nombres");
                 EstudiantesDropDownList.DataValueField = "IdEstudiante";
                 EstudiantesDropDownList.DataTextField = "Nombres";
                 EstudiantesDropDownList.DataBind();

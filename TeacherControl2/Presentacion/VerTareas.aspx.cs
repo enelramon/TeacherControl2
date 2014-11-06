@@ -54,7 +54,7 @@ namespace RegEstudiantes.Presentacion {
         }
 
         protected void EnviarButton_Click(object sender, EventArgs e) {
-            DataTable dt = Estudiantes.StaticListar("IdEstudiante", "Matricula = " + ((string)Session["Usuario"]).ToDbString()); // TODO: Revisar si se usara esta forma
+            DataTable dt = Estudiantes.Listar("IdEstudiante", "Matricula = " + ((string)Session["Usuario"]).ToDbString()); // TODO: Revisar si se usara esta forma
             int idEstudiante = -1;
             if (dt.Rows.Count > 0) {
                 idEstudiante = (int)dt.Rows[0]["IdEstudiante"];
