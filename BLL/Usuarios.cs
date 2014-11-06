@@ -11,6 +11,7 @@ namespace BLL
     public class Usuarios
     {
 
+
         public string Nombre { set; get; }
         public string Clave { set; get; }
         public int Tipo { set; get; }
