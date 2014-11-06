@@ -23,11 +23,11 @@ namespace TeacherControl.GUI
             usuario.Nombre = NombreTextBox.Text;
             usuario.Clave = ClaveTextBox.Text;
 
-            if (usuario.IniciarSesion() == true)
+            if (usuario.Autentificar() == true)
             {
                 Session["tipo"] = usuario.Tipo;
                 FormsAuthentication.RedirectFromLoginPage(usuario.Nombre, true);
-                Response.Redirect("Inicio.aspx");
+                Response.Redirect("RegistroUsuario.aspx");
             }
             else
             {
