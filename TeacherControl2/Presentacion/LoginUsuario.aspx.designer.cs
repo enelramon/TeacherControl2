@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TeacherControl.GUI {
+namespace TeacherControl2.Presentacion {
     
     
     public partial class LoginUsuario {

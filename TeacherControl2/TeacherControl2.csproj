@@ -78,6 +78,7 @@
     <Content Include="Presentacion\RegEstudiantes.aspx" />
     <Content Include="Presentacion\RegistroProfesores.aspx" />
     <Content Include="Presentacion\WebForm1.aspx" />
+    <Content Include="Presentacion\MainPage.Master" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Presentacion\WebForm2.aspx" />
     <Content Include="Presentacion\RegistroUsuario.aspx" />
@@ -185,6 +186,12 @@
     </Compile>
     <Compile Include="Presentacion\IniciarAsistencia.aspx.designer.cs">
       <DependentUpon>IniciarAsistencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\MainPage.Master.cs">
+      <DependentUpon>MainPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\MainPage.Master.designer.cs">
+      <DependentUpon>MainPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\PasarAsistencia.aspx.cs">
       <DependentUpon>PasarAsistencia.aspx</DependentUpon>

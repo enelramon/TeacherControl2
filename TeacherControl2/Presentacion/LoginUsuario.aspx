@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginUsuario.aspx.cs" Inherits="TeacherControl.GUI.LoginUsuario" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginUsuario.aspx.cs" Inherits="TeacherControl2.Presentacion.LoginUsuario" %>
 
 <!DOCTYPE html>
 
