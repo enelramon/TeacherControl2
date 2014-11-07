@@ -69,6 +69,7 @@
     <Content Include="App_Data\TeacherControlDb_log.ldf">
       <DependentUpon>TeacherControlDb.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Themes\ThemeTemplate\styles.css" />
     <Content Include="ConexionDB\TeacherControlDB   10-07-2014.sql" />
     <Content Include="Presentacion\ConsultarUsuario.aspx" />
     <Content Include="Presentacion\LoginUsuario.aspx" />
