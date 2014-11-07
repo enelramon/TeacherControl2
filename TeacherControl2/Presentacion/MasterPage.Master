@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainPage.master.cs" Inherits="TeacherControlWeb.MainPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="RegEstudiantes.Presentacion.MasterPage" %>
 
 <!DOCTYPE html>
 
@@ -81,3 +81,4 @@
     </form>
 </body>
 </html>
+

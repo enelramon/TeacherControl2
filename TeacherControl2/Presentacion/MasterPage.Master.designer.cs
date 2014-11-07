@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TeacherControlWeb {
+namespace RegEstudiantes.Presentacion {
     
     
-    public partial class MainPage {
+    public partial class MasterPage {
         
         /// <summary>
         /// head control.

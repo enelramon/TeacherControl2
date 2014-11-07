@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TeacherControl2.Presentacion {
+namespace RegEstudiantes.Presentacion {
     
     
     public partial class LoginUsuario {

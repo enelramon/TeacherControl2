@@ -78,7 +78,7 @@
     <Content Include="Presentacion\RegEstudiantes.aspx" />
     <Content Include="Presentacion\RegistroProfesores.aspx" />
     <Content Include="Presentacion\WebForm1.aspx" />
-    <Content Include="Presentacion\MainPage.Master" />
+    <Content Include="Presentacion\MasterPage.Master" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Presentacion\WebForm2.aspx" />
     <Content Include="Presentacion\RegistroUsuario.aspx" />
@@ -170,6 +170,7 @@
     </Compile>
     <Compile Include="Presentacion\LoginUsuario.aspx.cs">
       <DependentUpon>LoginUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentacion\LoginUsuario.aspx.designer.cs">
       <DependentUpon>LoginUsuario.aspx</DependentUpon>
@@ -187,11 +188,12 @@
     <Compile Include="Presentacion\IniciarAsistencia.aspx.designer.cs">
       <DependentUpon>IniciarAsistencia.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\MainPage.Master.cs">
-      <DependentUpon>MainPage.Master</DependentUpon>
+    <Compile Include="Presentacion\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentacion\MainPage.Master.designer.cs">
-      <DependentUpon>MainPage.Master</DependentUpon>
+    <Compile Include="Presentacion\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\PasarAsistencia.aspx.cs">
       <DependentUpon>PasarAsistencia.aspx</DependentUpon>
