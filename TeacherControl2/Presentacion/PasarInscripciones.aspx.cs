@@ -8,10 +8,10 @@ using BLL;
 
 namespace TeacherControl.Registro
 {
-    public partial class PasarTareas : System.Web.UI.Page
+    public partial class PasarInscripciones : System.Web.UI.Page
     {
         Estudiantes estudiante = new Estudiantes();
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -22,22 +22,21 @@ namespace TeacherControl.Registro
                 EstudianteDropDownList.DataBind();
 
                 int id = int.Parse(Request.QueryString["id"].ToString());
-                IdTareaTextBox.Text = id.ToString();
-                
+                IdInscripcionTextBox.Text = id.ToString();
+
             }
         }
 
         protected void Guardar_Click(object sender, EventArgs e)
         {
-            TareasDetalle tareadetalle = new TareasDetalle();
+            InscripcionesDetalle inscripciodetalle = new InscripcionesDetalle();
 
-            tareadetalle.IdTarea = int.Parse(IdTareaTextBox.Text);
-            tareadetalle.IdEstudiante = int.Parse(EstudianteDropDownList.SelectedValue);
-            tareadetalle.Calificacion = int.Parse(CalificacionDropDownList.SelectedValue);
+            inscripciodetalle.IdInscripcion = int.Parse(IdInscripcionTextBox.Text);
+            inscripciodetalle.IdEstudiante = int.Parse(EstudianteDropDownList.SelectedValue);
 
-            tareadetalle.Insertar();
+            inscripciodetalle.Insertar();
 
-            ConsultaGridView.DataSource = tareadetalle.Listar("1=1");
+            ConsultaGridView.DataSource = inscripciodetalle.Listar("1=1");
             ConsultaGridView.DataBind();
         }
     }

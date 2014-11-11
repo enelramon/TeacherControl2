@@ -10,16 +10,16 @@
 namespace TeacherControl.Registro {
     
     
-    public partial class PasarTareas {
+    public partial class PasarInscripciones {
         
         /// <summary>
-        /// IdTareaTextBox control.
+        /// IdInscripcionTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox IdTareaTextBox;
+        protected global::System.Web.UI.WebControls.TextBox IdInscripcionTextBox;
         
         /// <summary>
         /// EstudianteDropDownList control.
@@ -29,15 +29,6 @@ namespace TeacherControl.Registro {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList EstudianteDropDownList;
-        
-        /// <summary>
-        /// CalificacionDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CalificacionDropDownList;
         
         /// <summary>
         /// ConsultaGridView control.

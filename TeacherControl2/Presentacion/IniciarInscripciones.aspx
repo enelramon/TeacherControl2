@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Consultas.Master" AutoEventWireup="true" CodeBehind="IniciarTareas.aspx.cs" Inherits="TeacherControl.Registro.IniciarTareas" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Consultas.Master" AutoEventWireup="true" CodeBehind="IniciarInscripciones.aspx.cs" Inherits="TeacherControl.Registro.IniciarInscripciones" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
+
         .auto-style1 {
             width: 79%;
         }
@@ -14,54 +15,58 @@
         .auto-style4 {
             height: 26px;
         }
+        .auto-style5 {
+            width: 105px;
+            height: 23px;
+        }
+        .auto-style6 {
+            height: 23px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table class="auto-style1">
         <tr>
-            <td class="auto-style2">CodigoTarea:</td>
+            <td class="auto-style2">Fecha</td>
             <td>
-                <asp:TextBox ID="CodigoTareaTextBox" runat="server"></asp:TextBox>
+                <asp:TextBox ID="FechaTextBox" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
-            <td class="auto-style2">Fecha asignada:</td>
+            <td class="auto-style2">IdProfesor</td>
             <td>
-                <asp:TextBox ID="FechaTextBox" runat="server" OnTextChanged="FechaTextBox_TextChanged"></asp:TextBox>
+                <asp:DropDownList ID="IdProfesorDropDownList" runat="server" Height="26px" Width="127px" OnSelectedIndexChanged="IdProfesorDropDownList0_SelectedIndexChanged">
+                </asp:DropDownList>
             </td>
         </tr>
         <tr>
-            <td class="auto-style2">Fecha Vencida:</td>
+            <td class="auto-style2">IdSemestre:</td>
             <td>
-                <asp:TextBox ID="VenceTextBox" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style3">IdSemestre:</td>
-            <td class="auto-style4">
                 <asp:DropDownList ID="IdSemestreDropDownList" runat="server" Height="26px" Width="127px">
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
-            <td class="auto-style2">IdAsignatura:</td>
-            <td>
-                <asp:DropDownList ID="IdAsignaturaDropDownList" runat="server" Height="17px" Width="126px">
+            <td class="auto-style3">IdAsignatura:</td>
+            <td class="auto-style4">
+                <asp:DropDownList ID="IdAsignaturaDropDownList" runat="server" Height="26px" Width="127px">
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
             <td class="auto-style2">IdSeccion:</td>
             <td>
-                <asp:DropDownList ID="IdSeccionDropDownList" runat="server" Height="22px" Width="124px">
+                <asp:DropDownList ID="IdSeccionDropDownList" runat="server" Height="17px" Width="126px">
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
-            <td class="auto-style2">Fescripcion:</td>
-            <td>
-                <asp:TextBox ID="DescripcionTextBox" runat="server" Height="85px" Width="295px"></asp:TextBox>
-            </td>
+            <td class="auto-style3">&nbsp;</td>
+            <td class="auto-style4">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style5">&nbsp;</td>
+            <td class="auto-style6"></td>
         </tr>
         <tr>
             <td class="auto-style2">

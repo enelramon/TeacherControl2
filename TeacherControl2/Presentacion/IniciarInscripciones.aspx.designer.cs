@@ -10,16 +10,7 @@
 namespace TeacherControl.Registro {
     
     
-    public partial class IniciarTareas {
-        
-        /// <summary>
-        /// CodigoTareaTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CodigoTareaTextBox;
+    public partial class IniciarInscripciones {
         
         /// <summary>
         /// FechaTextBox control.
@@ -31,13 +22,13 @@ namespace TeacherControl.Registro {
         protected global::System.Web.UI.WebControls.TextBox FechaTextBox;
         
         /// <summary>
-        /// VenceTextBox control.
+        /// IdProfesorDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox VenceTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList IdProfesorDropDownList;
         
         /// <summary>
         /// IdSemestreDropDownList control.
@@ -65,15 +56,6 @@ namespace TeacherControl.Registro {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList IdSeccionDropDownList;
-        
-        /// <summary>
-        /// DescripcionTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DescripcionTextBox;
         
         /// <summary>
         /// InciarButton control.
