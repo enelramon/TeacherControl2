@@ -23,6 +23,8 @@ namespace BLL
             "Values('" + this.Codigo + "','" + this.Nombre + "'," + this.Creditos + ",'" + this.Activo + "')");
         }
 
+
+
         public bool Modifcar()
         {
             return Conexion.EjecutarDB("Update Asignaturas set Codigo='" + this.Codigo + "', Nombre='" + this.Nombre + "', Creditos=" + this.Creditos + ", Activo='" + this.Activo + "' where IdAsignatura = " + IdAsignatura);
