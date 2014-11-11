@@ -72,7 +72,9 @@
     <Content Include="ConexionDB\TeacherControlDB   10-07-2014.sql" />
     <Content Include="Presentacion\ConsultaEstudiantes.aspx" />
     <Content Include="Presentacion\IniciarAsistencia.aspx" />
+    <Content Include="Presentacion\IniciarTareas.aspx" />
     <Content Include="Presentacion\PasarAsistencia.aspx" />
+    <Content Include="Presentacion\PasarTareas.aspx" />
     <Content Include="Presentacion\RegEstudiantes.aspx" />
     <Content Include="Presentacion\RegistroProfesores.aspx" />
     <Content Include="Presentacion\WebForm1.aspx" />
@@ -160,6 +162,7 @@
     </Compile>
     <Compile Include="Presentacion\ConsultaEstudiantes.aspx.cs">
       <DependentUpon>ConsultaEstudiantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentacion\ConsultaEstudiantes.aspx.designer.cs">
       <DependentUpon>ConsultaEstudiantes.aspx</DependentUpon>
@@ -171,12 +174,25 @@
     <Compile Include="Presentacion\IniciarAsistencia.aspx.designer.cs">
       <DependentUpon>IniciarAsistencia.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\IniciarTareas.aspx.cs">
+      <DependentUpon>IniciarTareas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\IniciarTareas.aspx.designer.cs">
+      <DependentUpon>IniciarTareas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\PasarAsistencia.aspx.cs">
       <DependentUpon>PasarAsistencia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentacion\PasarAsistencia.aspx.designer.cs">
       <DependentUpon>PasarAsistencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\PasarTareas.aspx.cs">
+      <DependentUpon>PasarTareas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\PasarTareas.aspx.designer.cs">
+      <DependentUpon>PasarTareas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\RegEstudiantes.aspx.cs">
       <DependentUpon>RegEstudiantes.aspx</DependentUpon>
