@@ -65,9 +65,14 @@ namespace BLL
             return db.BuscarDb("Select * from Usuarios where " + Parametro);
         }
 
+        public DataTable Listar(string Campos, string FiltroWhere)
+        {
+            return db.BuscarDb("Select"+Campos+"from Usuarios where " + FiltroWhere);
+        }
+
         public bool Modificar()
         {
-            return db.EjecutarDB("Update Usuarios set Nombre = '" + Nombre + "', Clave = '" + Clave + "', Tipo = " + Tipo + ", Activo = '" + Activo + "'");
+            return db.EjecutarDB("Update Usuarios set Nombre = '" + Nombre + "', Clave = '" + Clave + "', Tipo = " + Tipo + ", Activo = '" + Activo + "' where Nombre = "+ Nombre);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegistroUsuario.aspx.cs" Inherits="LogingUsuario.GUI.RegistroUsuario" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegistroUsuario.aspx.cs" Inherits="RegEstudiantes.Presentacion.RegistroUsuario" %>
 
 <!DOCTYPE html>
 
@@ -27,6 +27,8 @@
             <asp:Button ID="LimpiarBotton" runat="server" style="z-index: 1; left: 273px; top: 241px; position: absolute" Text="Limpiar" OnClick="LimpiarBotton_Click" />
             <asp:Label ID="ActivoLabel" runat="server" style="z-index: 1; left: 306px; top: 98px; position: absolute; height: 17px" Text="Activo"></asp:Label>
             <asp:CheckBox ID="ActivoCheckBox" runat="server" style="z-index: 1; left: 377px; top: 96px; position: absolute" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="NombreTextBox" ErrorMessage="*" ForeColor="Red" style="z-index: 1; left: 261px; top: 38px; position: absolute"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="ClaveTextBox" ErrorMessage="*" ForeColor="Red" style="z-index: 1; left: 261px; top: 98px; position: absolute"></asp:RequiredFieldValidator>
         </asp:Panel>
     
     </div>

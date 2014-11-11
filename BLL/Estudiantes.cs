@@ -39,7 +39,7 @@ namespace BLL
         public bool Buscar()
         {
             bool mensaje = false;
-            DataTable dt;
+            DataTable dt = new DataTable();
             dt = conexion.BuscarDb("select *from Estudiantes where IdEstudiante = " + IdEstudiante);
             if (dt.Rows.Count > 0)
             {
