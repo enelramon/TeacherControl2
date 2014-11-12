@@ -7,7 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RegEstudiantes.Presentacion {
+namespace RegEstudiantes.Presentacion
+{
     
     
     public partial class ConsultaEstudiantes {

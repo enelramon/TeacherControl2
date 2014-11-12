@@ -26,6 +26,7 @@ namespace BLL {
             return paso;
         }
 
+
         public bool Eliminar() {
             return conexion.EjecutarDB("Delete from Tareas where IdTarea = " + IdTarea);
         }

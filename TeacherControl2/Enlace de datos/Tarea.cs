@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RegEstudiantes.Enlace_de_datos
+namespace TeacherControl.Enlace_de_datos
 {
     using System;
     using System.Collections.Generic;

@@ -11,7 +11,7 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RegEstudiantes</RootNamespace>
+    <RootNamespace>TeacherControl</RootNamespace>
     <AssemblyName>RegEstudiantes</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
@@ -75,6 +78,7 @@
     <Content Include="Presentacion\PasarAsistencia.aspx" />
     <Content Include="Presentacion\RegEstudiantes.aspx" />
     <Content Include="Presentacion\RegistroProfesores.aspx" />
+    <Content Include="Presentacion\rTareas.aspx" />
     <Content Include="Presentacion\VerTareas.aspx" />
     <Content Include="Presentacion\WebForm1.aspx" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
@@ -92,6 +96,12 @@
     </Compile>
     <Compile Include="BasePage.Master.designer.cs">
       <DependentUpon>BasePage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReport99.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport99.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Enlace de datos\Asignatura.cs">
       <DependentUpon>TeacherControlModel.tt</DependentUpon>
@@ -194,6 +204,13 @@
     <Compile Include="Presentacion\RegistroProfesores.aspx.designer.cs">
       <DependentUpon>RegistroProfesores.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\rTareas.aspx.cs">
+      <DependentUpon>rTareas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\rTareas.aspx.designer.cs">
+      <DependentUpon>rTareas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\VerTareas.aspx.cs">
       <DependentUpon>VerTareas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -256,6 +273,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
@@ -265,6 +283,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tareas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CrystalReport99.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport99.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

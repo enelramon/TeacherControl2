@@ -56,7 +56,7 @@ namespace BLL
             return Retorno;
         }
 
-        public static DataTable Listar(string condicion, string columnas)
+        public static DataTable Listar(string columnas, string condicion)
         {
             ConexionDb Conexion = new ConexionDb();
             return Conexion.BuscarDb("Select  " + columnas + "  from Asignaturas Where " + condicion);
