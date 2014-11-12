@@ -76,8 +76,10 @@
     <Content Include="Presentacion\ConsultaEstudiantes.aspx" />
     <Content Include="Presentacion\ConsultarUsuario.aspx" />
     <Content Include="Presentacion\IniciarAsistencia.aspx" />
+    <Content Include="Presentacion\IniciarInscripciones.aspx" />
     <Content Include="Presentacion\LoginUsuario.aspx" />
     <Content Include="Presentacion\PasarAsistencia.aspx" />
+    <Content Include="Presentacion\PasarInscripciones.aspx" />
     <Content Include="Presentacion\RegEstudiantes.aspx" />
     <Content Include="Presentacion\RegistroProfesores.aspx" />
     <Content Include="Presentacion\RegistroUsuario.aspx" />
@@ -198,6 +200,12 @@
     <Compile Include="Presentacion\IniciarAsistencia.aspx.designer.cs">
       <DependentUpon>IniciarAsistencia.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\IniciarInscripciones.aspx.cs">
+      <DependentUpon>IniciarInscripciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\IniciarInscripciones.aspx.designer.cs">
+      <DependentUpon>IniciarInscripciones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\LoginUsuario.aspx.cs">
       <DependentUpon>LoginUsuario.aspx</DependentUpon>
     </Compile>
@@ -216,6 +224,12 @@
     </Compile>
     <Compile Include="Presentacion\PasarAsistencia.aspx.designer.cs">
       <DependentUpon>PasarAsistencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\PasarInscripciones.aspx.cs">
+      <DependentUpon>PasarInscripciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\PasarInscripciones.aspx.designer.cs">
+      <DependentUpon>PasarInscripciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\RegEstudiantes.aspx.cs">
       <DependentUpon>RegEstudiantes.aspx</DependentUpon>
