@@ -19,7 +19,7 @@ namespace BLL
         public string Telefono { set; get; }
         public string Celular { set; get; }
         
-        Conexion conexion = new Conexion();
+        ConexionDb conexion = new ConexionDb();
         
         public bool Insertar()
         {
@@ -57,18 +57,18 @@ namespace BLL
             return mensaje;
         }
 
-        public DataTable Listar(string condicion,string columnas)
-        {
-            return conexion.BuscarDb("select " + columnas + " from Estudiantes Where " + condicion);
-        }
+        //public DataTable Listar(string condicion,string columnas)
+        //{
+        //    return conexion.BuscarDb("select " + columnas + " from Estudiantes Where " + condicion);
+        //}
 
         public static DataTable StaticListar(string condicion) { //ugly fix temporal
-            Conexion conexion = new Conexion();
+            ConexionDb conexion = new ConexionDb();
             return conexion.BuscarDb("select * from Estudiantes where " + condicion);
         }
 
         public static DataTable Listar(string columnas, string condicion) {
-            Conexion conexion = new Conexion();
+            ConexionDb conexion = new ConexionDb();
             return conexion.BuscarDb("select " + columnas + " from Estudiantes where " + condicion);
         }
     }
