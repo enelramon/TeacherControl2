@@ -18,7 +18,7 @@ namespace BLL
         public string Email { set; get; }
         public string Telefono { set; get; }
         public string Celular { set; get; }
-        
+
         ConexionDb conexion = new ConexionDb();
         
         public bool Insertar()
@@ -39,7 +39,7 @@ namespace BLL
         public bool Buscar()
         {
             bool mensaje = false;
-            DataTable dt;
+            DataTable dt = new DataTable();
             dt = conexion.BuscarDb("select *from Estudiantes where IdEstudiante = " + IdEstudiante);
             if (dt.Rows.Count > 0)
             {
@@ -57,14 +57,12 @@ namespace BLL
             return mensaje;
         }
 
-        public static DataTable StaticListar(string condicion) { //ugly fix temporal
+        public static DataTable Listar(string condicion, string columnas)
+        {
             ConexionDb conexion = new ConexionDb();
-            return conexion.BuscarDb("select * from Estudiantes where " + condicion);
+            return conexion.BuscarDb("select " + columnas + " from Estudiantes Where " + condicion);
         }
 
-        public static DataTable Listar(string columnas, string condicion) {
-            ConexionDb conexion = new ConexionDb();
-            return conexion.BuscarDb("select " + columnas + " from Estudiantes where " + condicion);
-        }
+      
     }
 }

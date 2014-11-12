@@ -69,16 +69,23 @@
     <Content Include="App_Data\TeacherControlDb_log.ldf">
       <DependentUpon>TeacherControlDb.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Themes\ThemeTemplate\styles.css" />
     <Content Include="ConexionDB\TeacherControlDB   10-07-2014.sql" />
-    <Content Include="Img\Left.png" />
-    <Content Include="Img\rigth.png" />
+    <Content Include="Presentacion\Autentificacion.aspx" />
+    <Content Include="Presentacion\ConsultaCalificaciones.aspx" />
     <Content Include="Presentacion\ConsultaEstudiantes.aspx" />
+    <Content Include="Presentacion\ConsultarUsuario.aspx" />
     <Content Include="Presentacion\IniciarAsistencia.aspx" />
+    <Content Include="Presentacion\IniciarInscripciones.aspx" />
+    <Content Include="Presentacion\LoginUsuario.aspx" />
     <Content Include="Presentacion\PasarAsistencia.aspx" />
-    <Content Include="Presentacion\RegCalificacionEnvios.aspx" />
+    <Content Include="Presentacion\PasarInscripciones.aspx" />
     <Content Include="Presentacion\RegEstudiantes.aspx" />
     <Content Include="Presentacion\RegistroProfesores.aspx" />
+    <Content Include="Presentacion\RegistroUsuario.aspx" />
+    <Content Include="Presentacion\VerTareas.aspx" />
     <Content Include="Presentacion\WebForm1.aspx" />
+    <Content Include="Presentacion\MasterPage.Master" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Presentacion\WebForm2.aspx" />
     <Content Include="Scripts\jquery-2.1.1.js" />
@@ -161,12 +168,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TeacherControlModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Autentificacion.aspx.cs">
+      <DependentUpon>Autentificacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Autentificacion.aspx.designer.cs">
+      <DependentUpon>Autentificacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ConsultaCalificaciones.aspx.cs">
+      <DependentUpon>ConsultaCalificaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ConsultaCalificaciones.aspx.designer.cs">
+      <DependentUpon>ConsultaCalificaciones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\ConsultaEstudiantes.aspx.cs">
       <DependentUpon>ConsultaEstudiantes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentacion\ConsultaEstudiantes.aspx.designer.cs">
       <DependentUpon>ConsultaEstudiantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ConsultarUsuario.aspx.cs">
+      <DependentUpon>ConsultarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ConsultarUsuario.aspx.designer.cs">
+      <DependentUpon>ConsultarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\IniciarAsistencia.aspx.cs">
       <DependentUpon>IniciarAsistencia.aspx</DependentUpon>
@@ -175,6 +200,24 @@
     <Compile Include="Presentacion\IniciarAsistencia.aspx.designer.cs">
       <DependentUpon>IniciarAsistencia.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\IniciarInscripciones.aspx.cs">
+      <DependentUpon>IniciarInscripciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\IniciarInscripciones.aspx.designer.cs">
+      <DependentUpon>IniciarInscripciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\LoginUsuario.aspx.cs">
+      <DependentUpon>LoginUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\LoginUsuario.aspx.designer.cs">
+      <DependentUpon>LoginUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\PasarAsistencia.aspx.cs">
       <DependentUpon>PasarAsistencia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -182,12 +225,11 @@
     <Compile Include="Presentacion\PasarAsistencia.aspx.designer.cs">
       <DependentUpon>PasarAsistencia.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\RegCalificacionEnvios.aspx.cs">
-      <DependentUpon>RegCalificacionEnvios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="Presentacion\PasarInscripciones.aspx.cs">
+      <DependentUpon>PasarInscripciones.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\RegCalificacionEnvios.aspx.designer.cs">
-      <DependentUpon>RegCalificacionEnvios.aspx</DependentUpon>
+    <Compile Include="Presentacion\PasarInscripciones.aspx.designer.cs">
+      <DependentUpon>PasarInscripciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\RegEstudiantes.aspx.cs">
       <DependentUpon>RegEstudiantes.aspx</DependentUpon>
@@ -202,6 +244,19 @@
     </Compile>
     <Compile Include="Presentacion\RegistroProfesores.aspx.designer.cs">
       <DependentUpon>RegistroProfesores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\RegistroUsuario.aspx.cs">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\RegistroUsuario.aspx.designer.cs">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\VerTareas.aspx.cs">
+      <DependentUpon>VerTareas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\VerTareas.aspx.designer.cs">
+      <DependentUpon>VerTareas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -265,6 +320,7 @@
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
