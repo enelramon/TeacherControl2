@@ -31,22 +31,22 @@ namespace RegEstudiantes.Presentacion {
         protected global::System.Web.UI.WebControls.TextBox IdEnvioTextBox;
         
         /// <summary>
-        /// LeftButton control.
+        /// LeftImageButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LeftButton;
+        protected global::System.Web.UI.WebControls.ImageButton LeftImageButton;
         
         /// <summary>
-        /// RightButton control.
+        /// RigthImageButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button RightButton;
+        protected global::System.Web.UI.WebControls.ImageButton RigthImageButton;
         
         /// <summary>
         /// Label2 control.

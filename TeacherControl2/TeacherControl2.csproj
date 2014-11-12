@@ -70,6 +70,8 @@
       <DependentUpon>TeacherControlDb.mdf</DependentUpon>
     </Content>
     <Content Include="ConexionDB\TeacherControlDB   10-07-2014.sql" />
+    <Content Include="Img\Left.png" />
+    <Content Include="Img\rigth.png" />
     <Content Include="Presentacion\ConsultaEstudiantes.aspx" />
     <Content Include="Presentacion\IniciarAsistencia.aspx" />
     <Content Include="Presentacion\PasarAsistencia.aspx" />
