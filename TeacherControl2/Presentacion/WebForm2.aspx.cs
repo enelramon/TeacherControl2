@@ -13,18 +13,17 @@ namespace RegEstudiantes.Presentacion
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-<<<<<<< HEAD
-            { 
+            {
 
                 EstudiantesDropDownList.DataSource = Estudiantes.Listar("1=1", "IdEstudiante,Nombres");
-=======
-            {
-                EstudiantesDropDownList.DataSource = BLL.Estudiantes.Listar("1=1", "IdEstudiante,Nombres");
->>>>>>> 4927b7c1205cb59762c56032060c522540bc5a21
-                EstudiantesDropDownList.DataValueField = "IdEstudiante";
-                EstudiantesDropDownList.DataTextField = "Nombres";
-                EstudiantesDropDownList.DataBind();
+                {
+                    EstudiantesDropDownList.DataSource = BLL.Estudiantes.Listar("1=1", "IdEstudiante,Nombres");
 
+                    EstudiantesDropDownList.DataValueField = "IdEstudiante";
+                    EstudiantesDropDownList.DataTextField = "Nombres";
+                    EstudiantesDropDownList.DataBind();
+
+                }
             }
         }
 
