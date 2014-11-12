@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RegEstudiantes.Presentacion {
+namespace TeacherControl.Presentacion {
     
     
     public partial class IniciarAsistencia {

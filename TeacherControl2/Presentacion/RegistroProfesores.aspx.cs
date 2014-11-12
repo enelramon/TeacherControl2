@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace RegEstudiantes.Presentacion
+namespace TeacherControl.Presentacion
 {
     
     public partial class RegistroProfesores : System.Web.UI.Page
