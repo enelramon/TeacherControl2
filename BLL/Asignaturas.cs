@@ -14,7 +14,7 @@ namespace BLL
         public string Nombre { get; set; }
         public int Creditos { get; set; }
         public bool Activo { get; set; }
-        //jesus
+        //jesus 99
         private ConexionDb Conexion = new ConexionDb();
 
 
