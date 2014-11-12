@@ -31,6 +31,18 @@ namespace RegEstudiantes.Presentacion
 
                 if (Request.QueryString["IdTarea"] != null)
                 {
+                    tarea.IdTarea = int.Parse(Request.QueryString["IdTarea"].ToString());
+                    if (tarea.Buscar(tarea.IdTarea))
+                    {
+                        CodigoTareaTextBox.Text = tarea.CodigoTarea;
+                        FechaTextBox.Text = tarea.Fecha.ToString("yyyy-MM-dd");
+                        VenceTextBox.Text = tarea.Vence.ToString("yyyy-MM-dd");
+                        AsignaturaDropDownList.SelectedIndex = AsignaturaDropDownList.Items.IndexOf(AsignaturaDropDownList.Items.FindByValue(tarea.IdAsignatura.ToString()));
+                        SemestreDropDownList.SelectedIndex = SemestreDropDownList.Items.IndexOf(SemestreDropDownList.Items.FindByValue(tarea.IdSemestre.ToString()));
+                        DescripcionTextBox.Text = tarea.Descripcion;
+                        ResultadoEsperadoTextBox.Text = tarea.ResultadoEsperado;
+                        EliminarButton.Visible = true;
+                    }
                     EliminarButton.Visible = true;
                 }
             
@@ -46,12 +58,28 @@ namespace RegEstudiantes.Presentacion
             tarea.IdAsignatura = int.Parse(AsignaturaDropDownList.SelectedItem.Value);
             tarea.Descripcion = DescripcionTextBox.Text;
             tarea.ResultadoEsperado = ResultadoEsperadoTextBox.Text;
-            if (tarea.Insertar())
+            if (Request.QueryString["IdTarea"] != null)
             {
-                Response.Write("Registro Completado!");
-            }else
+                tarea.IdTarea = int.Parse(Request.QueryString["IdTarea"].ToString());
+                if (tarea.Modificar())
+                {
+                    Response.Write("Registro completado");
+                }
+                else
+                {
+                    Response.Write("Registro no completado");
+                }
+            }
+            else
             {
-                Response.Write("Registro No Completado!");
+                if (tarea.Insertar())
+                {
+                    Response.Write("Registro completado");
+                }
+                else
+                {
+                    Response.Write("Registro no completado");
+                }
             }
         }
 
@@ -69,6 +97,21 @@ namespace RegEstudiantes.Presentacion
                     Response.Write("Error operacion fallida!");
                 }
             }
+        }
+
+        protected void NuevoButton_Click(object sender, EventArgs e)
+        {
+            Nuevo();
+        }
+        public void Nuevo()
+        {
+            EliminarButton.Visible = false;
+            CodigoTareaTextBox.Text = "";
+            FechaTextBox.Text = "";
+            VenceTextBox.Text = "";
+            DescripcionTextBox.Text = "";
+            ResultadoEsperadoTextBox.Text = "";
+            EliminarButton.Visible = false;
         }
     }
 }

@@ -102,6 +102,7 @@
             <tr>
                 <td class="auto-style1" colspan="3">
                     <asp:Button ID="GuardarButton" runat="server" Text="Guardar" Height="30px" OnClick="GuardarButton_Click" Width="80px" />
+                    <asp:Button ID="NuevoButton" runat="server" OnClick="NuevoButton_Click" Text="Nuevo" />
                     <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" Height="30px" OnClick="EliminarButton_Click" Width="80px" Visible="False" />
                 </td>
             </tr>
