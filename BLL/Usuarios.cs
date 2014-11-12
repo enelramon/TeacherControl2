@@ -10,6 +10,8 @@ namespace BLL
 {
     public class Usuarios
     {
+
+
         public string Nombre { set; get; }
         public string Clave { set; get; }
         public int Tipo { set; get; }
@@ -23,7 +25,7 @@ namespace BLL
             return db.EjecutarDB(string.Format("Insert into Usuarios(Nombre, Clave, Tipo, Activo) values ('" + Nombre + "', '" + Clave + "', " + Tipo + ", '" + Activo + "')"));
         }
 
-        public bool IniciarSesion()
+        public bool Autentificar()
         {
             bool retorno = false;
             dt = db.BuscarDb(string.Format("Select *from Usuarios where Nombre = '" + Nombre + "' and Clave = '" + Clave + "'"));
@@ -63,9 +65,14 @@ namespace BLL
             return db.BuscarDb("Select * from Usuarios where " + Parametro);
         }
 
-        public bool Actualizar()
+        public DataTable Listar(string Campos, string FiltroWhere)
         {
-            return db.EjecutarDB("Update Usuarios set Nombre = '" + Nombre + "', Clave = '" + Clave + "', Tipo = " + Tipo + ", Activo = '" + Activo + "'");
+            return db.BuscarDb("Select"+Campos+"from Usuarios where " + FiltroWhere);
+        }
+
+        public bool Modificar()
+        {
+            return db.EjecutarDB("Update Usuarios set Nombre = '" + Nombre + "', Clave = '" + Clave + "', Tipo = " + Tipo + ", Activo = '" + Activo + "' where Nombre = "+ Nombre);
         }
     }
 }

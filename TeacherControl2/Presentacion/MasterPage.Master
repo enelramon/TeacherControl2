@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="RegEstudiantes.Presentacion.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>.:: Inicio - TC ::.</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="container">
+    <header>
+    	<h1><a href="#">Teacher<span>Control</span></a></h1>
+        <h2 style="color:#373535">Administrando los estudiantes con un mejor sistema</h2>
+    </header>
+    <nav>
+    	<ul>
+        	<li class="start selected"><a href="#">Inicio</a></li>
+            <li><a href="MainRegistro.aspx">Registros</a></li>
+            <li><a href="MainConsutas.aspx">Consultas</a></li>
+            <li><a href="#">Acerca de Nosotros</a></li>
+            <li class="end"><a href="#">Contactos</a></li>
+        </ul>
+    </nav>
+
+    <div id="body">
+		<section id="content">
+
+	    <article>
+				
+			
+			<h2>Introducción de TeacherControl</h2>
+            <div class="article-info">Posted on <time datetime="2014-10-06">06 Oct</time> by <a href="#" rel="author">Symbionic Entreprise</a></div>
+            <ul>            
+            <li>TeacherControl es una aplicación web que ayuda al profesor al manejo del proreso acádemico del estudiante.</li>
+            </ul>
+		<a href="#" class="button">Leer más</a>
+
+		</article>
+	
+        </section>
+        
+        <aside class="sidebar">
+	
+            <ul>	
+                <li>
+                    <h4>Acerca de TeacherControl</h4>
+                    <ul>
+                        <li class="text">
+                        	<p style="margin: 0;">TeacherControl es una aplicación web que ayuda al profesor al manejo del proreso acádemico del estudiante.</p>
+                        </li>
+                    </ul>
+                </li>
+
+               <li>
+                    <h4>Ayuda</h4>
+                    <ul>
+                        <li><a href="#">Registros</a></li>
+                        <li><a href="#">Consultas</a></li>
+                        <li><a href="#">Ayuda en general</a></li>
+                    </ul>
+                </li>
+            </ul>
+		
+        </aside>
+    	<div class="clear"></div>
+    </div>
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; Derechos Reservados 2014 - Symbionic Enterprise</p>
+         </div>
+    </footer>
+</div>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
+
