@@ -70,6 +70,7 @@
       <DependentUpon>TeacherControlDb.mdf</DependentUpon>
     </Content>
     <Content Include="ConexionDB\TeacherControlDB   10-07-2014.sql" />
+    <Content Include="Presentacion\ConsultaCalificaciones.aspx" />
     <Content Include="Presentacion\ConsultaEstudiantes.aspx" />
     <Content Include="Presentacion\IniciarAsistencia.aspx" />
     <Content Include="Presentacion\PasarAsistencia.aspx" />
@@ -158,6 +159,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TeacherControlModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ConsultaCalificaciones.aspx.cs">
+      <DependentUpon>ConsultaCalificaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ConsultaCalificaciones.aspx.designer.cs">
+      <DependentUpon>ConsultaCalificaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\ConsultaEstudiantes.aspx.cs">
       <DependentUpon>ConsultaEstudiantes.aspx</DependentUpon>

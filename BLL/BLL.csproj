@@ -43,6 +43,7 @@
     <Compile Include="Asignaturas.cs" />
     <Compile Include="Asistencias.cs" />
     <Compile Include="AsistenciasDetalle.cs" />
+    <Compile Include="Calificaciones.cs" />
     <Compile Include="EnviosTareas.cs" />
     <Compile Include="Estudiantes.cs" />
     <Compile Include="Extensor.cs" />
