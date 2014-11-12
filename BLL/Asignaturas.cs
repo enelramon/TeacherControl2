@@ -17,6 +17,7 @@ namespace BLL
 
         private ConexionDb Conexion = new ConexionDb();
 
+
         public bool Insertar()
         {
             return Conexion.EjecutarDB("insert into Asignaturas(Codigo, Nombre, Creditos, Activo)" +
