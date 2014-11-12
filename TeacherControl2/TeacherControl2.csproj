@@ -84,6 +84,7 @@
     <Content Include="Presentacion\RegistroEstudiantes.aspx" />
     <Content Include="Presentacion\RegistroProfesores.aspx" />
     <Content Include="Presentacion\RegistroUsuario.aspx" />
+    <Content Include="Presentacion\rTareas.aspx" />
     <Content Include="Presentacion\VerTareas.aspx" />
     <Content Include="Presentacion\WebForm1.aspx" />
     <Content Include="Presentacion\MasterPage.Master" />
@@ -253,6 +254,12 @@
     </Compile>
     <Compile Include="Presentacion\RegistroUsuario.aspx.designer.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\rTareas.aspx.cs">
+      <DependentUpon>rTareas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\rTareas.aspx.designer.cs">
+      <DependentUpon>rTareas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\VerTareas.aspx.cs">
       <DependentUpon>VerTareas.aspx</DependentUpon>

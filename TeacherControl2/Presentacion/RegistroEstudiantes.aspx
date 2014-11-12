@@ -1,7 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BasePage.Master" AutoEventWireup="true" CodeBehind="RegistroEstudiantes.aspx.cs" Inherits="RegEstudiantes.Presentacion.RegistroEstudiantes" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegEstudiantes.aspx.cs" Inherits="TeacherControl.Presentacion.RegEstudiantes" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
     <div style="width: 424px; height: 294px;">
         <table style="width: 100%; height: 94px;">
             <tr>
@@ -92,4 +98,6 @@
         <br />
         <br />
     </div>
-</asp:Content>
+    </form>
+</body>
+</html>

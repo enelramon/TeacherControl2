@@ -14,14 +14,17 @@ namespace BLL
         public string Nombre { get; set; }
         public int Creditos { get; set; }
         public bool Activo { get; set; }
-
+        //jesus
         private ConexionDb Conexion = new ConexionDb();
+
 
         public bool Insertar()
         {
             return Conexion.EjecutarDB("insert into Asignaturas(Codigo, Nombre, Creditos, Activo)" +
             "Values('" + this.Codigo + "','" + this.Nombre + "'," + this.Creditos + ",'" + this.Activo + "')");
         }
+
+
 
         public bool Modifcar()
         {
@@ -54,7 +57,7 @@ namespace BLL
             return Retorno;
         }
 
-        public static DataTable Listar(string condicion, string columnas)
+        public static DataTable Listar(string columnas, string condicion)
         {
             ConexionDb Conexion = new ConexionDb();
             return Conexion.BuscarDb("Select  " + columnas + "  from Asignaturas Where " + condicion);
