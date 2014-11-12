@@ -11,7 +11,7 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RegEstudiantes</RootNamespace>
+    <RootNamespace>RegistroEstudiantes</RootNamespace>
     <AssemblyName>RegEstudiantes</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
@@ -74,6 +74,7 @@
     <Content Include="Presentacion\Autentificacion.aspx" />
     <Content Include="Presentacion\ConsultaCalificaciones.aspx" />
     <Content Include="Presentacion\ConsultaEstudiantes.aspx" />
+    <Content Include="Presentacion\ConsultaFecha.aspx" />
     <Content Include="Presentacion\ConsultarUsuario.aspx" />
     <Content Include="Presentacion\IniciarAsistencia.aspx" />
     <Content Include="Presentacion\IniciarInscripciones.aspx" />
@@ -81,6 +82,7 @@
     <Content Include="Presentacion\PasarAsistencia.aspx" />
     <Content Include="Presentacion\PasarInscripciones.aspx" />
     <Content Include="Presentacion\RegEstudiantes.aspx" />
+    <Content Include="Presentacion\RegistroEstudiantes.aspx" />
     <Content Include="Presentacion\RegistroProfesores.aspx" />
     <Content Include="Presentacion\RegistroUsuario.aspx" />
     <Content Include="Presentacion\VerTareas.aspx" />
@@ -187,6 +189,13 @@
     <Compile Include="Presentacion\ConsultaEstudiantes.aspx.designer.cs">
       <DependentUpon>ConsultaEstudiantes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\ConsultaFecha.aspx.cs">
+      <DependentUpon>ConsultaFecha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ConsultaFecha.aspx.designer.cs">
+      <DependentUpon>ConsultaFecha.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\ConsultarUsuario.aspx.cs">
       <DependentUpon>ConsultarUsuario.aspx</DependentUpon>
     </Compile>
@@ -233,10 +242,12 @@
     </Compile>
     <Compile Include="Presentacion\RegEstudiantes.aspx.cs">
       <DependentUpon>RegEstudiantes.aspx</DependentUpon>
+    <Compile Include="Presentacion\RegistroEstudiantes.aspx.cs">
+      <DependentUpon>RegistroEstudiantes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentacion\RegEstudiantes.aspx.designer.cs">
-      <DependentUpon>RegEstudiantes.aspx</DependentUpon>
+    <Compile Include="Presentacion\RegistroEstudiantes.aspx.designer.cs">
+      <DependentUpon>RegistroEstudiantes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\RegistroProfesores.aspx.cs">
       <DependentUpon>RegistroProfesores.aspx</DependentUpon>

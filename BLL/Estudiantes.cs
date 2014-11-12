@@ -18,7 +18,11 @@ namespace BLL
         public string Email { set; get; }
         public string Telefono { set; get; }
         public string Celular { set; get; }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 4927b7c1205cb59762c56032060c522540bc5a21
         ConexionDb conexion = new ConexionDb();
         
         public bool Insertar()
@@ -57,6 +61,7 @@ namespace BLL
             return mensaje;
         }
 
+<<<<<<< HEAD
         public static DataTable Listar(string condicion, string columnas)
         {
             ConexionDb conexion = new ConexionDb();
@@ -64,5 +69,21 @@ namespace BLL
         }
 
       
+=======
+        //public DataTable Listar(string condicion,string columnas)
+        //{
+        //    return conexion.BuscarDb("select " + columnas + " from Estudiantes Where " + condicion);
+        //}
+
+        public static DataTable StaticListar(string condicion) { //ugly fix temporal
+            ConexionDb conexion = new ConexionDb();
+            return conexion.BuscarDb("select * from Estudiantes where " + condicion);
+        }
+
+        public static DataTable Listar(string columnas, string condicion) {
+            ConexionDb conexion = new ConexionDb();
+            return conexion.BuscarDb("select " + columnas + " from Estudiantes where " + condicion);
+        }
+>>>>>>> 4927b7c1205cb59762c56032060c522540bc5a21
     }
 }
