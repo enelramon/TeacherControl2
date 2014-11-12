@@ -52,7 +52,6 @@
     <Compile Include="Semestres.cs" />
     <Compile Include="Tareas.cs" />
     <Compile Include="Usuarios.cs" />
-    <Compile Include="Tareas.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
