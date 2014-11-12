@@ -38,6 +38,7 @@ namespace TeacherControl.Registro
 
             ConsultaGridView.DataSource = inscripciodetalle.Listar("1=1");
             ConsultaGridView.DataBind();
+
         }
     }
 }
