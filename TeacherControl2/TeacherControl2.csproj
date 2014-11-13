@@ -242,6 +242,7 @@
     <Compile Include="Presentacion\PasarInscripciones.aspx.designer.cs">
       <DependentUpon>PasarInscripciones.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\rDeudasChoco.aspx .cs" />
     <Compile Include="Presentacion\RegCalificacionEnvios.aspx.cs">
       <DependentUpon>RegCalificacionEnvios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
