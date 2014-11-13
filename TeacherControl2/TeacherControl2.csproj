@@ -70,6 +70,8 @@
       <DependentUpon>TeacherControlDb.mdf</DependentUpon>
     </Content>
     <Content Include="ConexionDB\TeacherControlDB   10-07-2014.sql" />
+    <Content Include="img\Left.png" />
+    <Content Include="img\rigth.png" />
     <Content Include="Presentacion\ConsultaEstudiantes.aspx" />
     <Content Include="Presentacion\IniciarAsistencia.aspx" />
     <Content Include="Presentacion\PasarAsistencia.aspx" />
@@ -263,6 +265,7 @@
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
