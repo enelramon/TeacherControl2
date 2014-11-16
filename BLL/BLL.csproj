@@ -49,6 +49,8 @@
     <Compile Include="Extensor.cs" />
     <Compile Include="Inscripcciones.cs" />
     <Compile Include="InscripcionesDetalle.cs" />
+    <Compile Include="Profesores.cs" />
+    <Compile Include="Secciones.cs" />
     <Compile Include="Semestres.cs" />
     <Compile Include="Tareas.cs" />
     <Compile Include="Usuarios.cs" />
