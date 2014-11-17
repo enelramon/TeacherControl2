@@ -26,12 +26,12 @@ namespace RegEstudiantes.Presentacion
                 IdProfesorDropDownList.DataTextField = "Nombres";
                 IdProfesorDropDownList.DataBind();
 
-                IdSemestreDropDownList.DataSource = semestre.Listar("1=1");
+                IdSemestreDropDownList.DataSource = Semestres.Listar("IdSemestre, Codigo","1=1");
                 IdSemestreDropDownList.DataValueField = "IdSemestre";
                 IdSemestreDropDownList.DataTextField = "Codigo";
                 IdSemestreDropDownList.DataBind();
 
-                IdAsignaturaDropDownList.DataSource = asignatura.Listar("1=1");
+                IdAsignaturaDropDownList.DataSource = Asignaturas.Listar("IdAsignatura, Nombre","1=1");
                 IdAsignaturaDropDownList.DataValueField = "IdAsignatura";
                 IdAsignaturaDropDownList.DataTextField = "Nombre";
                 IdAsignaturaDropDownList.DataBind();
