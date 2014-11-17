@@ -21,24 +21,23 @@ namespace RegEstudiantes.Presentacion {
         }
 
         protected void BuscarButton_Click(object sender, EventArgs e) {
-<<<<<<< HEAD
+
             DatosGridView.DataSource = Estudiantes.Listar("2=2","*");
             DatosGridView.DataBind();
         }
 
         protected void AleatorioButton_Click(object sender, EventArgs e) {
-            DataTable dt = Estudiantes.Listar("IdEstudiante", "1=1");
-            int rEstudiante = random.Next(dt.Rows.Count) + 1;
-            Response.Redirect("~/Presentacion/RegEstudiantes.aspx?IdEstudiante=" + rEstudiante);
-=======
+            //DataTable dt = Estudiantes.Listar("IdEstudiante", "1=1");
+            //int rEstudiante = random.Next(dt.Rows.Count) + 1;
+            //Response.Redirect("~/Presentacion/RegEstudiantes.aspx?IdEstudiante=" + rEstudiante);
 
-            if (EstudiantesDropDownList.SelectedIndex == 1)
-                filtro += "and Nombres like '%" + BuscarTextBox.Text + "%'";
-            else if (EstudiantesDropDownList.SelectedIndex == 2)
-                filtro += "and Matricula like '%" + BuscarTextBox.Text + "%'";
+            //if (EstudiantesDropDownList.SelectedIndex == 1)
+            //    filtro += "and Nombres like '%" + BuscarTextBox.Text + "%'";
+            //else if (EstudiantesDropDownList.SelectedIndex == 2)
+            //    filtro += "and Matricula like '%" + BuscarTextBox.Text + "%'";
            
-            DatosGridView.DataSource = BLL.Estudiantes.StaticListar(filtro);
-            DatosGridView.DataBind();
+            //DatosGridView.DataSource = BLL.Estudiantes.StaticListar(filtro);
+            //DatosGridView.DataBind();
         }
 
         protected void EstudiantesDropDownList_SelectedIndexChanged(object sender, EventArgs e)
@@ -51,7 +50,6 @@ namespace RegEstudiantes.Presentacion {
             {
                 BuscarTextBox.ReadOnly = false;
             }
->>>>>>> 4927b7c1205cb59762c56032060c522540bc5a21
         }
     }
 }

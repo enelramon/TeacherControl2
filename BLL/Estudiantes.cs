@@ -55,18 +55,8 @@ namespace BLL
             }
             return mensaje;
         }
-        //public static DataTable Lista(string condicion, string columnas)
-        //{
-        //    ConexionDb conexion = new ConexionDb();
-        //    return conexion.BuscarDb("select " + columnas + " from Estudiantes Where " + condicion);
-        //}
 
-        //public DataTable Listar(string condicion,string columnas)
-        //{
-        //    return conexion.BuscarDb("select " + columnas + " from Estudiantes Where " + condicion);
-        //}
-
-        public static DataTable StaticListar(string condicion) { //ugly fix temporal
+        public DataTable StaticListar(string condicion) { //ugly fix temporal
             ConexionDb conexion = new ConexionDb();
             return conexion.BuscarDb("select * from Estudiantes where " + condicion);
         }

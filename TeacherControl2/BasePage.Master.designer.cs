@@ -10,7 +10,7 @@
 namespace RegEstudiantes {
     
     
-    public partial class Teacher {
+    public partial class BasePage {
         
         /// <summary>
         /// head control.

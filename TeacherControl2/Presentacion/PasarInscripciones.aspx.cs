@@ -16,7 +16,7 @@ namespace TeacherControl.Registro
         {
             if (!IsPostBack)
             {
-                EstudianteDropDownList.DataSource = estudiante.Listar("1=1");
+                EstudianteDropDownList.DataSource = Estudiantes.Listar("IdEstudiante,Nombres", "1=1");
                 EstudianteDropDownList.DataValueField = "IdEstudiante";
                 EstudianteDropDownList.DataTextField = "Nombres";
                 EstudianteDropDownList.DataBind();
