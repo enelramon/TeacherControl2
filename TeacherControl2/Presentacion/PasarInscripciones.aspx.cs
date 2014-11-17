@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BLL;
 
-namespace TeacherControl.Registro
+namespace RegEstudiantes.Presentacion
 {
     public partial class PasarInscripciones : System.Web.UI.Page
     {
@@ -16,7 +16,7 @@ namespace TeacherControl.Registro
         {
             if (!IsPostBack)
             {
-                EstudianteDropDownList.DataSource = Estudiantes.Listar("IdEstudiante,Nombres", "1=1");
+                EstudianteDropDownList.DataSource = Estudiantes.Listar("IdEstudiante,Nombres","1=1");
                 EstudianteDropDownList.DataValueField = "IdEstudiante";
                 EstudianteDropDownList.DataTextField = "Nombres";
                 EstudianteDropDownList.DataBind();
@@ -36,7 +36,7 @@ namespace TeacherControl.Registro
 
             inscripciodetalle.Insertar();
 
-            ConsultaGridView.DataSource = inscripciodetalle.Listar("1=1");
+            ConsultaGridView.DataSource = InscripcionesDetalle.Listar("1=1");
             ConsultaGridView.DataBind();
 
         }

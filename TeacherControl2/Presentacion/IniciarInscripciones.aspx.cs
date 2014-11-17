@@ -9,38 +9,38 @@ namespace RegEstudiantes.Presentacion
 {
     public partial class IniciarInscripciones : System.Web.UI.Page
     {
-        //Profesores profesores = new Profesores();
+        Profesores profesores = new Profesores();
 
         Semestres semestre = new Semestres();
 
         Asignaturas asignatura = new Asignaturas();
 
-        //Secciones secciones = new Secciones();
+        Secciones secciones = new Secciones();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                //IdProfesorDropDownList.DataSource = profesores.Listar("1=1");
-                //IdProfesorDropDownList.DataValueField = "IdProfesor";
-                //IdProfesorDropDownList.DataTextField = "Nombres";
-                //IdProfesorDropDownList.DataBind();
+                IdProfesorDropDownList.DataSource = profesores.Listar("1=1");
+                IdProfesorDropDownList.DataValueField = "IdProfesor";
+                IdProfesorDropDownList.DataTextField = "Nombres";
+                IdProfesorDropDownList.DataBind();
 
-                //IdSemestreDropDownList.DataSource = semestre.Listar("1=1");
-                //IdSemestreDropDownList.DataValueField = "IdSemestre";
-                //IdSemestreDropDownList.DataTextField = "Codigo";
-                //IdSemestreDropDownList.DataBind();
+                IdSemestreDropDownList.DataSource = Semestres.Listar("IdSemestre, Codigo","1=1");
+                IdSemestreDropDownList.DataValueField = "IdSemestre";
+                IdSemestreDropDownList.DataTextField = "Codigo";
+                IdSemestreDropDownList.DataBind();
 
-                //IdAsignaturaDropDownList.DataSource = asignatura.Listar("1=1");
-                //IdAsignaturaDropDownList.DataValueField = "IdAsignatura";
-                //IdAsignaturaDropDownList.DataTextField = "Nombre";
-                //IdAsignaturaDropDownList.DataBind();
+                IdAsignaturaDropDownList.DataSource = Asignaturas.Listar("IdAsignatura, Nombre","1=1");
+                IdAsignaturaDropDownList.DataValueField = "IdAsignatura";
+                IdAsignaturaDropDownList.DataTextField = "Nombre";
+                IdAsignaturaDropDownList.DataBind();
 
 
-                //IdSeccionDropDownList.DataSource = secciones.Listar("1=1");
-                //IdSeccionDropDownList.DataValueField = "IdSeccion";
-                //IdSeccionDropDownList.DataTextField = "Numero";
-                //IdSeccionDropDownList.DataBind();
+                IdSeccionDropDownList.DataSource = secciones.Listar("1=1");
+                IdSeccionDropDownList.DataValueField = "IdSeccion";
+                IdSeccionDropDownList.DataTextField = "Numero";
+                IdSeccionDropDownList.DataBind();
 
 
             }
