@@ -70,8 +70,9 @@ namespace BLL
             return mensaje;
         }
 
-        public DataTable Listar(string filtro)
+        public static DataTable Listar(string filtro)
         {
+            ConexionDb conexion = new ConexionDb();
             DataTable dt = new DataTable();
             dt = conexion.BuscarDb("Select * From InscripcionesDetalle where " + filtro);
             return dt;
