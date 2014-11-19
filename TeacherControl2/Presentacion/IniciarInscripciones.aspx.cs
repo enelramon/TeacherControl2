@@ -21,7 +21,7 @@ namespace RegEstudiantes.Presentacion
         {
             if (!IsPostBack)
             {
-                IdProfesorDropDownList.DataSource = profesores.Listar("1=1");
+                IdProfesorDropDownList.DataSource = Profesores.Listar("1=1");
                 IdProfesorDropDownList.DataValueField = "IdProfesor";
                 IdProfesorDropDownList.DataTextField = "Nombres";
                 IdProfesorDropDownList.DataBind();
@@ -37,7 +37,7 @@ namespace RegEstudiantes.Presentacion
                 IdAsignaturaDropDownList.DataBind();
 
 
-                IdSeccionDropDownList.DataSource = secciones.Listar("1=1");
+                IdSeccionDropDownList.DataSource = Secciones.Listar("1=1");
                 IdSeccionDropDownList.DataValueField = "IdSeccion";
                 IdSeccionDropDownList.DataTextField = "Numero";
                 IdSeccionDropDownList.DataBind();

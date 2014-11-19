@@ -8,7 +8,7 @@ using System.Web.Security;
 using System.Web.UI.WebControls;
 using BLL;
 
-namespace TeacherControl.GUI
+namespace RegEstudiantes.Presentacion
 {
     public partial class LoginUsuario : System.Web.UI.Page
     {

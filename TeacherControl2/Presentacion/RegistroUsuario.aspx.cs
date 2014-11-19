@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BLL;
 
-namespace LogingUsuario.GUI
+namespace RegEstudiantes.Presentacion
 {
     public partial class RegistroUsuario : System.Web.UI.Page
     {
