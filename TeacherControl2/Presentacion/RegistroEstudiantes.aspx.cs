@@ -25,7 +25,7 @@ namespace RegEstudiantes.Presentacion
         const int ANO_INICIALD = 1978;
         const int INICIAL_MATRICULA = 0;
 
-       
+
 
         public void Limpiar()
         {
@@ -47,26 +47,26 @@ namespace RegEstudiantes.Presentacion
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            
-                int idestudiante = 0;
-                int.TryParse(IdEstudianteTextBox.Text, out idestudiante);
-                estudiantes.IdEstudiante = idestudiante;
-                estudiantes.Matricula = MatriculaTextBox.Text;
-                estudiantes.Nombre = NombreTextBox.Text;
 
-                estudiantes.Direccion = DireccionTextBox.Text;
-                estudiantes.FechaNac = Convert.ToDateTime(FechaNacTextBox.Text);
-                estudiantes.Genero = SexoDropDownList.SelectedIndex;
-                estudiantes.Email = EmailTextBox.Text;
-                estudiantes.Telefono = TelefonoTextBox.Text;
-                estudiantes.Celular = CelularTextBox.Text;
-                if (idestudiante == 0)
-                    estudiantes.Insertar();
-                else
-                    estudiantes.Modificar();
-                Limpiar();
-            }
-        
+            int idestudiante = 0;
+            int.TryParse(IdEstudianteTextBox.Text, out idestudiante);
+            estudiantes.IdEstudiante = idestudiante;
+            estudiantes.Matricula = MatriculaTextBox.Text;
+            estudiantes.Nombre = NombreTextBox.Text;
+
+            estudiantes.Direccion = DireccionTextBox.Text;
+            estudiantes.FechaNac = Convert.ToDateTime(FechaNacTextBox.Text);
+            estudiantes.Genero = SexoDropDownList.SelectedIndex;
+            estudiantes.Email = EmailTextBox.Text;
+            estudiantes.Telefono = TelefonoTextBox.Text;
+            estudiantes.Celular = CelularTextBox.Text;
+            if (idestudiante == 0)
+                estudiantes.Insertar();
+            else
+                estudiantes.Modificar();
+            Limpiar();
+        }
+
 
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
@@ -86,7 +86,7 @@ namespace RegEstudiantes.Presentacion
         {
             Buscar();
         }
-        void Buscar() 
+        void Buscar()
         {
             int idestudiante = 0;
             int.TryParse(IdEstudianteTextBox.Text, out idestudiante);
