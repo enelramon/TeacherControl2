@@ -70,10 +70,11 @@ namespace BLL
             return mensaje;
         }
 
-        public DataTable Listar(string filtro)
+        public static DataTable Listar(string filtro)
         {
+            DAL.ConexionDb con = new DAL.ConexionDb();
             DataTable dt = new DataTable();
-            dt = conexion.BuscarDb("Select * From InscripcionesDetalle where " + filtro);
+            dt = con.BuscarDb("Select * From InscripcionesDetalle where " + filtro);
             return dt;
         }
     }

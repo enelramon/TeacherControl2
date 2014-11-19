@@ -23,7 +23,8 @@ namespace BLL {
         ConexionDb conexion = new ConexionDb();
 
         public bool Insertar() {
-            return conexion.EjecutarDB("insert into EnviosTareas(IdEstudiante, IdTarea, Fecha, Descripcion, ResultadoEsperado, Adjuntar, PorcentajeCalificacion) values(" + IdEstudiante + "," + IdTarea + "," + Fecha.ToDbString() + "," + Descripcion.ToDbString() + "," + ResultadoEsperado.ToDbString() + "," + Adjuntar.ToDbString() + "," + Porcentaje + ");");
+            return conexion.EjecutarDB("insert into EnviosTareas(IdEstudiante, IdTarea, Fecha, Descripcion, ResultadoEsperado, Adjuntar, PorcentajeCalificacion) "
+             + "values(" + IdEstudiante + "," + IdTarea + "," + Fecha.ToDbString() + "," + Descripcion.ToDbString() + "," + ResultadoEsperado.ToDbString() + "," + Adjuntar.ToDbString() + "," + Porcentaje + ");");
         }
 
         public bool Eliminar() {

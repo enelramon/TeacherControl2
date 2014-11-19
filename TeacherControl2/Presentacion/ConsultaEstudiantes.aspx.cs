@@ -15,7 +15,7 @@ namespace RegEstudiantes.Presentacion {
             if (Request.QueryString["Consulta"] != null)
             { 
                 filtro= Request.QueryString["Consulta"];
-                DatosGridView.DataSource = BLL.Estudiantes.StaticListar(filtro);
+                DatosGridView.DataSource = BLL.Estudiantes.Listar(filtro);
                 DatosGridView.DataBind();
             }
         }

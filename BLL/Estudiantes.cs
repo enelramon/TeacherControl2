@@ -56,7 +56,7 @@ namespace BLL
             return mensaje;
         }
 
-        public DataTable StaticListar(string condicion) { //ugly fix temporal
+        public static DataTable Listar(string condicion) {
             ConexionDb conexion = new ConexionDb();
             return conexion.BuscarDb("select * from Estudiantes where " + condicion);
         }

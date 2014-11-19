@@ -38,7 +38,7 @@ namespace RegEstudiantes.Presentacion {
         }
 
         protected void AdjuntarButton_Click(object sender, EventArgs e) {
-            if (TareaFileUpload.HasFile) {
+            if (TareaFileUpload.HasFile) {//se deberian agregar las tablas nuevas para adjuntar la tarea del alumno con la tarea subida por el.
                 try {
                     string filename = Path.GetFileName(TareaFileUpload.FileName);
                     TareaFileUpload.SaveAs(Server.MapPath("~/Tareas/") + filename);
@@ -54,7 +54,8 @@ namespace RegEstudiantes.Presentacion {
         }
 
         protected void EnviarButton_Click(object sender, EventArgs e) {
-            DataTable dt = Estudiantes.Listar("IdEstudiante", "Matricula = " + ((string)Session["Usuario"]).ToDbString()); // TODO: Revisar si se usara esta forma
+            DataTable dt = Estudiantes.Listar("IdEstudiante", "Matricula =" + ((string)Session["Usuario"])); // TODO: Revisar si se usara esta forma
+            //DataTable dt = Estudiantes.Listar("IdEstudiante", "Matricula = '2011-0070'"); //idfijo para probar la subida
             int idEstudiante = -1;
             if (dt.Rows.Count > 0) {
                 idEstudiante = (int)dt.Rows[0]["IdEstudiante"];
